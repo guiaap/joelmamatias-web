@@ -1,0 +1,14 @@
+
+
+
+@import "tailwindcss";
+
+:root {
+
+  --master-container: 2000px;
+
+  --primary-background: #FAF7F2;
+
+  --primary-brown: #1A1209;
+  --transparent-primary-brown: #1A1209;
+}
