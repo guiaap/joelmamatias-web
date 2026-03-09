@@ -13,7 +13,6 @@ export function Gradient() {
     );
 }
 
-
 export function DecorativeLine() {
 
     return (
@@ -93,9 +92,9 @@ export default function HeroSection() {
     return (
 
         <section id="start"
-        className="relative flex items-center justify-center h-screen max-h-[900px] overflow-hidden p-5 pt-10">
+        className="relative flex items-center justify-center md:h-screen md:max-h-[900px] overflow-hidden">
             {images.map((img, i) => (
-                
+
                 <div key={i} 
                 className={`
                     absolute inset-0
@@ -113,7 +112,7 @@ export default function HeroSection() {
             <div className="
             z-15 
             flex flex-col gap-5 justify-start 
-            w-(--container) text-(--white) 
+            w-(--container-large) text-(--white) 
             ">
 
                 <SectionTag text="Especialista em Gestão Estratégica" />
@@ -127,7 +126,7 @@ export default function HeroSection() {
                     <span className="text-(--primary-gold) italic">segurança</span> e resultados.
                 </h1>
 
-                <p className="max-w-(--container-sm) text-[clamp(1rem,2vw,1.2rem)] text-(--transparent-white-smooth)">
+                <p className="max-w-(--container-small) text-[clamp(1rem,2vw,1.2rem)] text-(--transparent-white-smooth)">
                 Soluções personalizadas em Administração, Departamento Pessoal, Segurança do Trabalho, 
                 Contratos e Gestão de Pessoas para empresas que buscam excelência e conformidade.
                 </p>

@@ -18,7 +18,7 @@ export default function MainLayout
       font-dm
       ">
         <Header />
-        <main>
+        <main className="[&>section]:py-25 [&>section]:px-5">
           <Outlet />
         </main>
 
