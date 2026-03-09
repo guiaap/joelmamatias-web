@@ -135,7 +135,7 @@ export default function Header() {
     return (
 
         <header className="
-        fixed top-0 
+        fixed top-0 z-1000
         w-screen
         max-w-(--master-container) 
         bg-(--primary-brown)

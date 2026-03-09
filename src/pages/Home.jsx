@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import HeroSection from "../components/HeroSection.jsx";
 
 export default function Home() {
 
@@ -15,10 +16,10 @@ const location = useLocation();
         el.scrollIntoView({ behavior: "smooth" });
       }
     }
-    
+
   }, [location]);
 
     return (
-        <></>
+        <HeroSection />
     );
 }
