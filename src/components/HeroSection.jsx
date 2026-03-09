@@ -45,9 +45,16 @@ export default function HeroSection() {
             ))}
 
             <div className="absolute inset-0 z-5 bg-[linear-gradient(100deg,rgba(26,18,9,0.88)_0%,rgba(26,18,9,0.60)_55%,rgba(26,18,9,0.20)_100%)]"/>
+
+            <div className="
+            absolute top-1/2 right-1/2 z-10 
+            -translate-x-1/2 -translate-y-1/2
+            h-[400px] w-[1px]
+            bg-[linear-gradient(to_bottom,transparent,var(--primary-gold),transparent)]
+            "/>
             
             <div className="
-            z-10 
+            z-15 
             flex flex-col gap-5 justify-start 
             w-(--container) text-(--white) 
             ">
