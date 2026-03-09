@@ -1,7 +1,11 @@
 import Header from "./Header.jsx";
 import { Outlet } from "react-router-dom";
 
-export default function MainLayout() {
+export default function MainLayout
+
+
+
+() {
 
     return (
 
@@ -11,9 +15,12 @@ export default function MainLayout() {
       mx-auto 
       bg-(--primary-background)
       shadow-lg
+      font-dm
       ">
         <Header />
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
 
     </div>
 
