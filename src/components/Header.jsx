@@ -41,7 +41,7 @@ export function MenuItem({text, to, setIsOpen}) {
             flex justify-center 
             p-1 
             uppercase text-[0.9rem] tracking-widest
-            border-b border-b-(--transparent-white)
+            border-b border-b-(--transparent-white-strong)
             transition-all duration-300
 
             hover:text-(--primary-gold)
@@ -107,7 +107,7 @@ export function MenuButton({isOpen, setIsOpen}) {
 export function WhatsappButton() {
 
     return (
-        <a href="https://wa.me/47991181188" about="_blank"
+        <a href="https://wa.me/47991181188" target="_blank"
         className="
         hidden lg:flex gap-2 items-center
         text-[0.9rem] uppercase tracking-widest
