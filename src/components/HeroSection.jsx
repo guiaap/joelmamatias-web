@@ -73,6 +73,7 @@ export default function HeroSection() {
                 <div className="flex flex-col gap-3 md:flex-row ">
 
                     <Link to="/#services"
+                    aria-label="Ir para a seção de Serviços"
                     className="
                         w-fit
                         uppercase tracking-widest 
@@ -87,6 +88,7 @@ export default function HeroSection() {
                     </Link>
 
                     <Link to="/#about"
+                    aria-label="ir para a seção Sobre Mim"
                     className="
                         w-fit
                         uppercase tracking-widest 

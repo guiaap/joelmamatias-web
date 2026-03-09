@@ -35,7 +35,10 @@ export function MenuItem({text, to, setIsOpen}) {
 
     return (
         <li>
-            <Link to={to} onClick={() => setIsOpen(false)}
+            <Link 
+            to={to} 
+            onClick={() => setIsOpen(false)}
+            aria-label={`ir para a seção ${text}`}
             className="
             relative
             flex justify-center 
@@ -95,7 +98,9 @@ export function Menu({isOpen, setIsOpen}) {
 export function MenuButton({isOpen, setIsOpen}) {
     
     return (
-        <button onClick={() => setIsOpen(!isOpen)}
+        <button 
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={`${isOpen ? "fechar" : "abrir"} menu de navegação`}
         className="lg:hidden"
         >
             <Icon name={ isOpen ? "close" : "menu"} />
@@ -107,7 +112,9 @@ export function MenuButton({isOpen, setIsOpen}) {
 export function WhatsappButton() {
 
     return (
-        <a href="https://wa.me/47991181188" target="_blank"
+        <a href="https://wa.me/47991181188" 
+        target="_blank"
+        aria-label="Ir para a conversa por WhatsApp"
         className="
         hidden lg:flex gap-2 items-center
         text-[0.9rem] uppercase tracking-widest
@@ -157,8 +164,6 @@ export default function Header() {
                 <WhatsappButton />
                 
             </nav>
-
-            
 
         </header>
     );
