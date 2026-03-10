@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import Icon from "./Icon.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 export function Logo() {
@@ -69,6 +69,7 @@ export function MenuItem({text, to, setIsOpen}) {
 export function Menu({isOpen, setIsOpen}) {
 
     return (
+
         <ul className={`
         transition-all duration-300
         absolute left-0 top-[74px]  
@@ -77,7 +78,6 @@ export function Menu({isOpen, setIsOpen}) {
         bg-(--primary-brown) md:bg-(--transparent)
         ${ isOpen ? "max-h-[300px] pt-3 pb-5 px-5 opacity-100" : "max-h-0 overflow-hidden opacity-0"}
         
-
         lg:static
         lg:flex-row lg:gap-3
         lg:max-h-[300px] lg:w-auto
@@ -120,12 +120,12 @@ export function WhatsappButton() {
         text-[0.9rem] uppercase tracking-widest
         border border-(--white) 
         px-4 py-2
-        transiton-colors duration-300
+        transition-colors duration-300
 
         hover:border-(--primary-gold) 
         hover:text-(--primary-gold)
 
-        [&>svg]:transiton-colors [&>svg]:duration-300
+        [&>svg]:transition-colors [&>svg]:duration-300
         hover:[&>svg]:fill-(--primary-gold)
         ">
           <Icon name="whatsapp" size="20px" />  
@@ -138,17 +138,34 @@ export function WhatsappButton() {
 export default function Header() {
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+       
+        const handleListener = () => {
+            setIsScrolled(window.scrollY > 10);
+        }
+
+        window.addEventListener("scroll", handleListener);
+
+        return () => {
+            window.removeEventListener("scroll", handleListener);
+        };
+
+    }, []);
 
     return (
 
-        <header className="
-        sticky md:fixed top-0 z-1000
-        w-screen
+        <header className={`
+        sticky md:fixed top-0 z-50
+        w-full
         max-w-(--master-container) 
-        bg-(--primary-brown) md:bg-(--transparent)
         text-(--white)
-        ">
-
+        bg-(--primary-brown)
+        transition-colors duration-300
+        ${ isScrolled ? "md:bg-(--transparent-primary-brown)" : "md:bg-transparent" } 
+        `}>
+        
             <nav className="
             relative
             max-w-(--container) 
