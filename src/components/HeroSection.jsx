@@ -92,7 +92,7 @@ export default function HeroSection() {
     return (
 
         <section id="start"
-        className="relative flex items-center justify-center md:h-screen md:max-h-[900px] overflow-hidden">
+        className="relative flex items-center justify-center md:h-screen md:max-h-[900px] overflow-hidden pt-50">
             {images.map((img, i) => (
 
                 <div key={i} 

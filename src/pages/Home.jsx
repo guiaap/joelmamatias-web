@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import HeroSection from "../components/HeroSection.jsx";
+import AboutSection from "../components/AboutSection.jsx";
 
 export default function Home() {
 
@@ -20,6 +21,10 @@ const location = useLocation();
   }, [location]);
 
     return (
-        <HeroSection />
+
+        <>
+          <HeroSection />
+          <AboutSection />
+        </>
     );
 }

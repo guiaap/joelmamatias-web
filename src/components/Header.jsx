@@ -74,7 +74,7 @@ export function Menu({isOpen, setIsOpen}) {
         absolute left-0 top-[74px]  
         w-full 
         flex flex-col gap-2
-        bg-(--primary-brown)
+        bg-(--primary-brown) md:bg-(--transparent)
         ${ isOpen ? "max-h-[300px] pt-3 pb-5 px-5 opacity-100" : "max-h-0 overflow-hidden opacity-0"}
         
 
@@ -142,10 +142,10 @@ export default function Header() {
     return (
 
         <header className="
-        fixed top-0 z-1000
+        sticky md:fixed top-0 z-1000
         w-screen
         max-w-(--master-container) 
-        bg-(--primary-brown)
+        bg-(--primary-brown) md:bg-(--transparent)
         text-(--white)
         ">
 
@@ -155,7 +155,6 @@ export default function Header() {
             mx-auto 
             flex items-center justify-between 
             p-4 
-            bg-(--primary-brown)
             ">
 
                 <Logo />
