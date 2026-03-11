@@ -112,14 +112,14 @@ export default function HeroSection() {
             <div className="
             z-15 
             flex flex-col gap-5 justify-start 
-            w-(--container-large) text-(--white) 
+            w-(--container) text-(--white) 
             ">
 
                 <SectionTag text="Especialista em Gestão Estratégica" />
 
                 <h1 className="
-                font-cormorant 
-                text-[clamp(2.8rem,6vw,7rem)]
+                font-cormorant
+                text-[clamp(2.8rem,6vw,6.5rem)]
                 tracking-tight leading-none
                 ">
                     Gestão estratégica, <br/> 
