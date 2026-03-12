@@ -1,38 +1,63 @@
 import SectionTag from "./SectionTag.jsx";
 import { Link } from "react-router-dom";
+import Icon from "./Icon.jsx";
 
-import photo from "../assets/images/joelma.jpeg"
+import photo from "../assets/images/joelma.jpeg";
 
 export function Avatar() {
 
     return (
 
-        <div className="order-2 lg:order-1">
+        <figure className="relative max-h-[400px] max-w-[400px] ">
 
-            <figure className="
-            relative
-            min-h-[200px] min-w-[200px]
-            max-h-[500px] max-w-[500px] 
+            <img 
+            src={photo} 
+            alt="Foto de Joelma Matias" 
+            className="
+            relative z-10
+            w-full h-full
+            object-cover
+            shadow-md
+            "/>
+
+            <div className="
+            absolute top-[-10px] left-[-10px]
+            w-full h-full
             border border-(--primary-gold)
-            ">
+            "/>
 
-                <img 
-                src={photo} 
-                alt="Foto de Joelma Matias" 
-                className="
-                w-full h-full
-                object-cover
-                shadow-md
-                "/>
-
-                <figcaption className="hidden">Foto de Joelma Matias</figcaption>
-
-            </figure>
-
-            <div></div>
-        </div>
+        </figure>
     )
 
+}
+
+export function Diferential({iconName, iconColor, text, textColor, bgColor}) {
+
+    return (
+
+        <li className={`
+        flex items-center gap-1 
+        px-6 py-3 
+        text-(${textColor}) bg-(--dark-gold) bg-(${bgColor})
+        `}>
+           <Icon name={iconName} color={iconColor} /> {text}
+        </li>
+    )
+}
+
+export function Diferentials() {
+
+    return (
+
+        <ul className="absolute -bottom-1/4 -right-1/25 z-20 flex flex-col gap-1">
+
+            <Diferential iconName="person" text="Atendimento Humanizado" textColor="--white" bgColor="--primary-brown" />
+            <Diferential iconName="bolt" text="Agilidade" textColor="--white" />
+            <Diferential iconName="calendar" iconColor="#FFFFF" text="+20 Anos de Experiência" bgColor="--primary-gold"  />
+
+        </ul>
+
+    );
 }
 
 export function ContactButton() {
@@ -53,6 +78,25 @@ export function ContactButton() {
     )
 }
 
+export function Initials() {
+
+    return (
+        <span className="
+        inline-block
+        absolute top-0 right-0 
+        -translate-y-1/6 translate-x-1/16
+        font-cormorant font-bold
+        text-[clamp(10rem,20vw,21rem)]
+        uppercase text-(--primary-gold)
+        leading-none
+        opacity-10
+        pointer-events-none select-none
+        ">
+            JM
+        </span>
+    )
+}
+
 export default function AboutSection() {
 
     return (
@@ -60,31 +104,33 @@ export default function AboutSection() {
         <section id="about">
 
             <div className="
-            flex flex-col gap-10 
-            items-center justify-between
-            max-w-(--container) mx-auto
+            flex flex-col
+            items-center justify-between gap-10
+            max-w-(--container-large) mx-auto
 
             lg:flex-row
             ">
 
-                <Avatar />
+                <div className="relative order-2 lg:order-1">
+                    <Avatar />
+                    <Diferentials />
+                </div>
 
-                <article className="
-                flex flex-col order-1 
-                max-w-[650px]
-                
-                lg:order-2
-                ">
+                <article className="relative flex flex-col justify-center order-1 lg:order-2 max-w-[650px]">
 
                     <SectionTag text="Quem sou eu" color="--primary-brown" />
 
                     <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)]">
-                        Sobre <span className="italic text-(--dark-gold)">mim</span>
+                        Sobre 
+                        <span className="italic text-(--dark-gold)"> mim</span>
                     </h2>
+
+                    <Initials />
 
                     <div className="flex flex-col gap-5 mb-8 text-[clamp(1rem,2vw,1.1rem)]">
 
-                        <p>Sou formada em Administração de Empresas e pós-graduada em Gestão Estratégica de Pessoas.
+                        <p>
+                            Sou formada em Administração de Empresas e pós-graduada em Gestão Estratégica de Pessoas.
                             Complemento minha atuação com especializações em Segurança do Trabalho, Gestão de Cargos e
                             Salários, Gestão de Contratos, Programação Neurolinguística (PNL) e Administração de Condomínios.
                         </p>
@@ -96,8 +142,8 @@ export default function AboutSection() {
                         </p>
 
                         <p className="
-                        font-cormorant italic text-[clamp(1.4rem,2vw,1.8rem)] 
-                        pl-3 border-l-[2px] border-(--dark-gold) 
+                        font-cormorant italic text-[clamp(1.4rem,2vw,1.6rem)]
+                        pl-3 border-l-[2px] border-(--dark-gold)
                         ">
                             "Do planejamento à execução — com organização, conformidade e resultados práticos."
                         </p>
@@ -121,13 +167,13 @@ export default function AboutSection() {
                             <li>Processos claros, com rotinas e indicadores.</li>
                             <li>Entregas objetivas e aplicáveis no dia a dia.</li>
                         </ul>
-
                     </div>
+
 
                     <ContactButton />
 
                 </article>
-
+        
             </div>
 
         </section>

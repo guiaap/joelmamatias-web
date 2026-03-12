@@ -20,7 +20,7 @@ export function DecorativeLine() {
         <div className="
         absolute top-1/2 right-1/2 z-10 
         -translate-x-1/2 -translate-y-1/2
-        h-[400px] w-[1px]
+        h-[300px] w-[1px]
         bg-[linear-gradient(to_bottom,transparent,var(--primary-gold),transparent)]
         "/>
     );
@@ -119,7 +119,7 @@ export default function HeroSection() {
 
                 <h1 className="
                 font-cormorant
-                text-[clamp(2.8rem,6vw,6.5rem)]
+                text-[clamp(2.8rem,6vw,6rem)]
                 tracking-tight leading-none
                 ">
                     Gestão estratégica, <br/> 

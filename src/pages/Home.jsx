@@ -22,7 +22,7 @@ const location = useLocation();
 
     return (
 
-        <div className="[&>section]:py-10 [&>section]:px-5">
+        <div className="[&>section]:py-15 [&>section]:px-5">
           <HeroSection />
           <AboutSection />
         </div>
