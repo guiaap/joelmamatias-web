@@ -53,7 +53,7 @@ export function Diferentials() {
         <ul className="absolute -bottom-1/4 -right-1/25 z-20 flex flex-col gap-1">
 
             <Diferential iconName="person" text="Atendimento Humanizado" textColor="--white" bgColor="--primary-brown" />
-            <Diferential iconName="bolt" text="Agilidade" textColor="--white" />
+            <Diferential iconName="bolt" text="Agilidade" textColor="--white"  />
             <Diferential iconName="calendar" iconColor="#FFFFF" text="+20 Anos de Experiência" bgColor="--primary-gold"  />
 
         </ul>
@@ -117,13 +117,13 @@ export default function AboutSection() {
                     <Diferentials />
                 </div>
 
-                <article className="relative flex flex-col justify-center order-1 lg:order-2 max-w-[650px]">
+                <article className="relative justify-center order-1 lg:order-2 max-w-[650px]">
 
                     <SectionTag text="Quem sou eu" color="--primary-brown" />
 
                     <SectionTitle 
                         text1="Sobre " text2="mim" 
-                        color1="--primary-brown" color2="--dark-gold"
+                        color1="--primary-brown" color2="--primary-gold"
                     />
 
                     <Initials />

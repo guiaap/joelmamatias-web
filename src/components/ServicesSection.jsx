@@ -88,7 +88,7 @@ export function ServiceCard({number, image, alt, title, list}) {
         <div className="
         flex flex-col gap-3
         px-5 pt-1 pb-5
-        border-[0.25px] border-[#c9a96e54]
+        border-[0.25px] border-(--transparent-gold)
         bg-[#ffffff09] 
         transtion-all duration-300
         after:content-['']
@@ -158,7 +158,6 @@ export default function ServicesSection() {
 
                 <div className="
                 flex flex-col items-start justify-between
-                pb-5
                 md:flex-row md:items-center
                 ">
                     <div>

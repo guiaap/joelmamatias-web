@@ -17,13 +17,14 @@
   --primary-brown: #1A1209;
   --transparent-primary-brown: #1a1209f3;
 
-  --transparent-white-smooth: #FFFFFF99;
-  --transparent-white-strong: #FFFFFF50;
-
   --primary-gold: #C9A96E;
   --secondary-gold: #E8D4B0;
   --dark-gold: #8B6F47;
 
+  --transparent-white-smooth: #FFFFFF99;
+  --transparent-white-strong: #FFFFFF50;
+  --transparent-gold: #c9a96e54;
+ 
   --white: #FFFFFF;
   --black: #000000;
 
@@ -33,4 +34,8 @@
 @theme {
   --font-cormorant: "Cormorant Garamond", serif;
   --font-dm: "DM Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

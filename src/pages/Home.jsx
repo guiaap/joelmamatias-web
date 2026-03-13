@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import HeroSection from "../components/HeroSection.jsx";
 import AboutSection from "../components/AboutSection.jsx";
 import ServicesSection from "../components/ServicesSection.jsx";
+import BlogSection from "../components/BlogSection.jsx";
 
 export default function Home() {
 
@@ -27,6 +28,7 @@ const location = useLocation();
           <HeroSection />
           <AboutSection />
           <ServicesSection />
+          <BlogSection />
         </div>
           
     );

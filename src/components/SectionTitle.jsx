@@ -7,6 +7,7 @@ export default function SectionTitle({text1, text2, color1, color2}) {
         <h2 className={`
         font-cormorant text-[clamp(2.5rem,5vw,4rem)]
         text-(${color1})
+        mb-4
         `}>
 
             {text1}
