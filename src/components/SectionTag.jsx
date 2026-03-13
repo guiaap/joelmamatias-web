@@ -4,7 +4,7 @@ export default function SectionTag({text, color = "--primary-gold"}) {
 
     return (
         <div className="flex items-center gap-2">
-            <div className={`h-[1px] w-[30px] bg-(${color})`} />
+            <div className={`h-[1px] w-[20px] bg-(${color})`} />
 
             <p className={`
                 font-dm

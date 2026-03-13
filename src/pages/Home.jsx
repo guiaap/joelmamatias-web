@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import HeroSection from "../components/HeroSection.jsx";
 import AboutSection from "../components/AboutSection.jsx";
+import ServicesSection from "../components/ServicesSection.jsx";
 
 export default function Home() {
 
@@ -25,6 +26,7 @@ const location = useLocation();
         <div className="[&>section]:py-15 [&>section]:px-5">
           <HeroSection />
           <AboutSection />
+          <ServicesSection />
         </div>
           
     );

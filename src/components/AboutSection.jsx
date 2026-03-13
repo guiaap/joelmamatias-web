@@ -1,6 +1,7 @@
 import SectionTag from "./SectionTag.jsx";
 import { Link } from "react-router-dom";
 import Icon from "./Icon.jsx";
+import SectionTitle from "./SectionTitle.jsx";
 
 import photo from "../assets/images/joelma.jpeg";
 
@@ -120,10 +121,10 @@ export default function AboutSection() {
 
                     <SectionTag text="Quem sou eu" color="--primary-brown" />
 
-                    <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)]">
-                        Sobre 
-                        <span className="italic text-(--dark-gold)"> mim</span>
-                    </h2>
+                    <SectionTitle 
+                        text1="Sobre " text2="mim" 
+                        color1="--primary-brown" color2="--dark-gold"
+                    />
 
                     <Initials />
 
