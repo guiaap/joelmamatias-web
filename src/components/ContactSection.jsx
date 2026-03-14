@@ -92,8 +92,8 @@ export default function ContactSection() {
                 <form 
                     action="POST"
                     className="
-                    flex-1 p-5 
-                    w-full max-w-(--container-small) 
+                    flex-1 p-5 md:p-8
+                    w-full max-w-[650px] 
                     bg-[#FFFFFF05]
                     border border-[#FFFFFF20]
 
