@@ -1,6 +1,9 @@
 import SectionTag from "./SectionTag.jsx";
 import SectionTitle from "./SectionTitle.jsx";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
+import Icon from "./Icon.jsx";
+import { useState } from "react";
 
 import post1Image from "../assets/images/post1-image.png";
 import post2Image from "../assets/images/post2-image.jpg";
@@ -37,7 +40,7 @@ export function BlogCard({image, alt, date, title, description}) {
         <article 
         style={{ scrollSnapAlign: "start" }}
         className="
-            min-w-[300px] 
+            relative min-w-[300px] pb-8
             flex-1
             snap-start
             border border-(--transparent-gold)
@@ -55,7 +58,7 @@ export function BlogCard({image, alt, date, title, description}) {
             
 
             <div className="
-                flex flex-col gap-3
+                flex flex-col gap-3 
                 h-full p-5 
                 bg-(--white)
             ">
@@ -74,28 +77,88 @@ export function BlogCard({image, alt, date, title, description}) {
                 <p>
                     {description}
                 </p>
+
+                <Link className="
+                absolute bottom-5
+                w-[155px] 
+                flex items-center justify-between
+                text-(--dark-gold) text-[0.8rem]
+                uppercase tracking-widest
+                transition-all duration-300
+                hover:w-[160px] hover:text-(--primary-brown)
+                hover:[&>svg]:fill-(--primary-brown)
+                ">
+                    <span>Continuar Lendo</span> 
+
+                    <Icon name="arrow-forward" size="15px" color="#8B6F47" />
+                    
+                </Link>
+
             </div>
 
         </article>
     );
 }
 
+export function CarouselButton({iconName, scroll}) {
+
+    return (
+
+        <button 
+        onClick={scroll}
+        className="
+            flex items-center justify-center
+            h-10 w-10 rounded-full
+            border border-(--dark-gold)
+        ">
+            <Icon name={iconName} size="25px" color="#8B6F47" />
+        </button>
+    )
+}
+
+export function Indicator({isActive}) {
+
+    return (
+
+        <span className={`
+        h-3 w-3
+        rounded-full
+        border border-(--dark-gold)
+        ${ isActive ? "bg-(--primary-gold)" : "bg-transparent"}
+        `}>
+
+        </span>
+    )
+}
+
 export default function BlogSection() {
 
-    const carouselRef = useRef();
+    const [index, setIndex] = useState(0);
+  
+    const carouselRef = useRef(null);
 
     function scrollLeft() {
+
+        if (index === 0) return;
+
         carouselRef.current.scrollBy({
         left: -320,
         behavior: "smooth"
         });
+        
+        setIndex(prev => prev - 1);
     }
 
     function scrollRight() {
+
+        if (index === posts.length - 1) return;
+
         carouselRef.current.scrollBy({
         left: 320,
         behavior: "smooth"
         });
+
+        setIndex(prev => prev + 1);
     }
 
     return (
@@ -127,6 +190,24 @@ export default function BlogSection() {
                             description={post.description}
                          />
                     ))}
+                </div>
+
+                <div className="w-full flex items-center justify-between lg:hidden">
+
+                    <CarouselButton iconName="arrow-back" scroll={scrollLeft} setIndex={setIndex} />
+
+                    <div className="flex gap-2">
+
+                        {posts.map((post, i) => (
+
+                            <Indicator isActive={index === i} />
+
+                        ))}
+
+                    </div>
+
+                    <CarouselButton iconName="arrow-forward" scroll={scrollRight} setIndex={setIndex} />
+
                 </div>
             </div>
         </section>
