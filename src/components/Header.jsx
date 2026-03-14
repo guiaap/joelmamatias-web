@@ -114,6 +114,7 @@ export function WhatsappButton() {
     return (
         <a href="https://wa.me/47991181188" 
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Ir para a conversa por WhatsApp"
         className="
         hidden lg:flex gap-2 items-center

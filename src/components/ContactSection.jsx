@@ -39,6 +39,7 @@ export default function ContactSection() {
                     <a 
                         href="https://www.instagram.com/jm.gestaointeligente/" 
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-4 mb-8
                     ">
                         <img 
@@ -75,6 +76,7 @@ export default function ContactSection() {
                     <a 
                         href="https://wa.me/47991181188" 
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="
                         block w-fit
                         uppercase tracking-widest

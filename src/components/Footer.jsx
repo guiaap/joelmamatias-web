@@ -26,7 +26,9 @@ export default function Footer() {
 
                 <a 
                     href="https://guiaap.github.io/portifolio"
+                    aria-label="Ir para o site do desenvolvedor"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="
                         transition-colors duration-300
                         hover:text-(--primary-gold)
