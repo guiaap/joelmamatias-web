@@ -24,11 +24,14 @@
   --transparent-white-smooth: #FFFFFF99;
   --transparent-white-strong: #FFFFFF50;
   --transparent-gold: #c9a96e54;
+
+  --green: #25D366;
+  --transparent-green-smooth: rgba(37,211,102,.35);
+  --transparent-green-strong: rgba(37,211,102,.08);
  
   --white: #FFFFFF;
   --black: #000000;
 
-  --gradient: linear-gradient(100deg, rgba(26,18,9,.88) 0%, rgba(26,18,9,.60) 55%, rgba(26,18,9,.20) 100%);
 }
 
 @theme {

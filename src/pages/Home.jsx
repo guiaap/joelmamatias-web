@@ -4,6 +4,7 @@ import HeroSection from "../components/HeroSection.jsx";
 import AboutSection from "../components/AboutSection.jsx";
 import ServicesSection from "../components/ServicesSection.jsx";
 import BlogSection from "../components/BlogSection.jsx";
+import ContactSection from "../components/ContactSection.jsx";
 
 export default function Home() {
 
@@ -29,6 +30,7 @@ const location = useLocation();
           <AboutSection />
           <ServicesSection />
           <BlogSection />
+          <ContactSection />
         </div>
           
     );

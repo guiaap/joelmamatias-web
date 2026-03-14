@@ -119,7 +119,7 @@ export default function HeroSection() {
 
                 <h1 className="
                 font-cormorant
-                text-[clamp(2.8rem,6vw,6rem)]
+                text-[clamp(2.8rem,8vw,6rem)]
                 tracking-tight leading-none
                 ">
                     Gestão estratégica, <br/> 
