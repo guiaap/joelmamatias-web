@@ -4,36 +4,10 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "./Icon.jsx";
 import { useState } from "react";
+import { posts } from "../data/posts.js";
 
-import post1Image from "../assets/images/post1-image.png";
-import post2Image from "../assets/images/post2-image.jpg";
-import post3Image from "../assets/images/post3-image.jpg";
 
-const posts = [
-    {
-        image: post1Image,
-        alt: "Imagem representando o Post",
-        date: "04 de Novembro de 2025",
-        title: "eSocial 2025: novidades, integração e gestão inteligente",
-        description: "O ano de 2025 trouxe mudanças importantes no eSocial, que vão impactar diretamente empresas, profissionais de contabilidade e departamentos de pessoas."
-    },
-    {
-        image: post2Image,
-        alt: "Imagem representando o Post",
-        date: "04 de Setembro de 2025",
-        title: "A Importância da Documentação Correta para a Segurança da Empresa",
-        description: "No dia a dia corporativo, a documentação é muito mais do que burocracia: ela é a base que sustenta a organização e a segurança jurídica."
-    },
-    {
-        image: post3Image, 
-        alt: "Imagem representando o Post",
-        date: "04 de Setembro de 2025",
-        title: "A Importância do Treinamento para o Sucesso na Execução das Atividades",
-        description: "No ambiente corporativo atual, marcado por mudanças rápidas, o treinamento deixou de ser diferencial e passou a ser necessidade estratégica."
-    },
-];
-
-export function BlogCard({image, alt, date, title, description}) {
+export function BlogCard({id, image, alt, date, title, description}) {
 
     return (
 
@@ -78,16 +52,19 @@ export function BlogCard({image, alt, date, title, description}) {
                     {description}
                 </p>
 
-                <Link className="
-                absolute bottom-5
-                w-[155px] 
-                flex items-center justify-between
-                text-(--dark-gold) text-[0.8rem]
-                uppercase tracking-widest
-                transition-all duration-300
-                hover:w-[160px] hover:text-(--primary-brown)
-                hover:[&>svg]:fill-(--primary-brown)
-                ">
+                <Link 
+                    to={`/blogpost/${id}`}
+                    className="
+                        absolute bottom-5
+                        w-[155px] 
+                        flex items-center justify-between
+                        text-(--dark-gold) text-[0.8rem]
+                        uppercase tracking-widest
+                        transition-all duration-300
+                        hover:w-[160px] hover:text-(--primary-brown)
+                        hover:[&>svg]:fill-(--primary-brown)
+                    ">
+
                     <span>Continuar Lendo</span> 
 
                     <Icon name="arrow-forward" size="15px" color="#8B6F47" />
@@ -184,6 +161,7 @@ export default function BlogSection() {
                     {posts.map((post, index) => (
                         <BlogCard
                             key={index}
+                            id={post.id}
                             image={post.image}
                             date={post.date}
                             title={post.title}

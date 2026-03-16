@@ -4,6 +4,114 @@ import Icon from "./Icon.jsx";
 
 import instagram from "../assets/images/instagram.png";
 
+export function ContactForm() {
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        const data = {
+            name,
+            email,
+            message
+        };
+
+        await fetch("http://localhost:3001/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+    }
+
+    return (
+
+        <form 
+            onSubmit={handleSubmit}
+            className="
+            flex-1 p-5 md:p-8
+            w-full max-w-[650px] 
+            bg-[#FFFFFF05]
+            border border-[#FFFFFF20]
+
+            [&>div]:flex [&>div]:flex-col [&>div]:gap-2
+            [&>div]:mb-6
+
+            [&>div>label]:text-(--transparent-white-smooth)
+            [&>div>label]:text-[0.8rem]
+            [&>div>label]:tracking-widest
+            [&>div>label]:uppercase
+
+            [&>div>input,textarea]:border-2 
+            [&>div>input,textarea]:border-[#FFFFFF20]
+            [&>div>input,textarea]:bg-[#FFFFFF10]
+            [&>div>input,textarea]:text-(--white)
+            [&>div>input,textarea]:transition-all
+            [&>div>input,textarea]:duration-500
+            [&>div>input,textarea]:px-3 [&>div>input,textarea]:py-3
+            [&>div>input::placeholder,textarea::placeholder]:text-[#FFFFFF70]
+            [&>div>input::placeholder,textarea::placeholder]:text-[0.9rem]
+            [&>div>input::placeholder,textarea::placeholder]:font-light
+            [&>div>input:focus,textarea:focus]:outline-none
+            [&>div>input:focus,textarea:focus]:border-2
+            [&>div>input:focus,textarea:focus]:border-(--primary-gold)
+        ">
+
+            <div>
+
+                <label htmlFor="name">Nome</label>
+
+                <input 
+                    id="name"
+                    name="name"
+                    type="text" 
+                    placeholder="Seu nome completo"
+                    required 
+                />
+
+            </div>
+
+            <div>
+                <label htmlFor="email">E-mail</label>
+
+                <input 
+                    id="email"
+                    name="email"
+                    type="email" 
+                    placeholder="Seu e-mail" 
+                    required
+                />
+
+            </div>
+
+            <div>
+                <label htmlFor="message">Mensagem</label>
+                <textarea 
+                    id="message"
+                    name="message"
+                    placeholder="Como posso ajudar?"
+                    className="resize-none h-[160px]"
+                />
+                
+            </div>
+
+            <input 
+                type="submit" 
+                value="Enviar Mensagem" 
+                className="
+                block w-full py-3
+                uppercase tracking-widest
+                text-[0.9rem]
+                bg-(--primary-gold)
+                cursor-pointer
+                transition-all duration-300
+                hover:bg-(--secondary-gold)
+                hover:-translate-y-[5px]
+            "/>
+            </form>
+    );
+}
+
 export default function ContactSection() {
 
     return (
@@ -91,89 +199,7 @@ export default function ContactSection() {
                     </a>
                 </div>
 
-                <form 
-                    action="POST"
-                    className="
-                    flex-1 p-5 md:p-8
-                    w-full max-w-[650px] 
-                    bg-[#FFFFFF05]
-                    border border-[#FFFFFF20]
-
-                    [&>div]:flex [&>div]:flex-col [&>div]:gap-2
-                    [&>div]:mb-6
-
-                    [&>div>label]:text-(--transparent-white-smooth)
-                    [&>div>label]:text-[0.8rem]
-                    [&>div>label]:tracking-widest
-                    [&>div>label]:uppercase
-
-                    [&>div>input,textarea]:border-2 
-                    [&>div>input,textarea]:border-[#FFFFFF20]
-                    [&>div>input,textarea]:bg-[#FFFFFF10]
-                    [&>div>input,textarea]:text-(--white)
-                    [&>div>input,textarea]:transition-all
-                    [&>div>input,textarea]:duration-500
-                    [&>div>input,textarea]:px-3 [&>div>input,textarea]:py-3
-                    [&>div>input::placeholder,textarea::placeholder]:text-[#FFFFFF70]
-                    [&>div>input::placeholder,textarea::placeholder]:text-[0.9rem]
-                    [&>div>input::placeholder,textarea::placeholder]:font-light
-                    [&>div>input:focus,textarea:focus]:outline-none
-                    [&>div>input:focus,textarea:focus]:border-2
-                    [&>div>input:focus,textarea:focus]:border-(--primary-gold)
-                ">
-
-                    <div>
-
-                        <label htmlFor="name">Nome</label>
-
-                        <input 
-                            id="name"
-                            name="name"
-                            type="text" 
-                            placeholder="Seu nome completo"
-                            required 
-                        />
-
-                    </div>
-
-                    <div>
-                        <label htmlFor="email">E-mail</label>
-
-                        <input 
-                            id="email"
-                            name="email"
-                            type="email" 
-                            placeholder="Seu nome completo" 
-                            required
-                        />
-
-                    </div>
-
-                    <div>
-                        <label htmlFor="message">Mensagem</label>
-                        <textarea 
-                            id="message"
-                            name="message"
-                            placeholder="Como posso ajudar?"
-                            className="resize-none h-[160px]"
-                        />
-                        
-                    </div>
-
-                    <input 
-                        type="submit" 
-                        value="Enviar Mensagem" 
-                        className="
-                        block w-full py-3
-                        uppercase tracking-widest
-                        text-[0.9rem]
-                        bg-(--primary-gold)
-                        cursor-pointer
-                        transition-all duration-300
-                        hover:bg-(--secondary-gold)
-                        hover:-translate-y-[5px]
-                    "/>
-                </form>
+               <ContactForm />
 
             </div>
 
