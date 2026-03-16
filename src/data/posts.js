@@ -5,6 +5,7 @@ import post3Image from "../assets/images/post3-image.jpg";
 export const posts = [
     {   
         id: "esocial-2025",
+        category: "eSocial",
         image: post1Image,
         alt: "Imagem representando o Post",
         date: "04 de Novembro de 2025",
@@ -13,6 +14,7 @@ export const posts = [
     },
     {
         id: "importancia-documentacao-correta",
+        category: "Documentação",
         image: post2Image,
         alt: "Imagem representando o Post",
         date: "04 de Setembro de 2025",
@@ -21,6 +23,7 @@ export const posts = [
     },
     {
         id: "importancia-treinamento",
+        category: "Treinamento",
         image: post3Image, 
         alt: "Imagem representando o Post",
         date: "04 de Setembro de 2025",

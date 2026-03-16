@@ -136,7 +136,7 @@ export function WhatsappButton() {
 
 }
 
-export default function Header() {
+export default function Header({isMainLayout}) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -158,13 +158,16 @@ export default function Header() {
     return (
 
         <header className={`
-        sticky md:fixed top-0 z-50
+        ${ isMainLayout? "sticky md:fixed" : "sticky"}
+        top-0 z-50
         w-full
         max-w-(--master-container) 
         text-(--white)
         bg-(--primary-brown)
         transition-colors duration-300
-        ${ isScrolled ? "md:bg-(--transparent-primary-brown)" : "md:bg-transparent" } 
+        ${ isMainLayout 
+            ? `${isScrolled ? "md:bg-(--transparent-primary-brown)" : "md:bg-transparent"}` 
+            : "bg-(--primary-brown)"} 
         `}>
         
             <nav className="
