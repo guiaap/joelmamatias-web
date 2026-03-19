@@ -171,13 +171,13 @@ export default function Header({isMainLayout}) {
     return (
 
         <header className={`
-            ${ isMainLayout? "sticky md:fixed" : "sticky"}
+            ${ isMainLayout? "sticky xl:fixed" : "sticky"}
             top-0 z-50
             w-full max-w-(--master-container) 
             bg-(--primary-brown)
             transition-colors duration-300
             ${ isMainLayout 
-                ? `${isScrolled ? "lg:bg-(--transparent-primary-brown)" : "lg:bg-transparent"}` 
+                ? `${isScrolled ? "lg:bg-(--transparent-primary-brown)" : "xl:bg-transparent"}` 
                 : "bg-(--primary-brown)"} 
         `}>
         
