@@ -2,23 +2,32 @@ import SectionTag from "./SectionTag.jsx";
 import Icon from "./Icon.jsx";
 import SectionTitle from "./SectionTitle.jsx";
 import { HookButton } from "./HeroSection.jsx";
+import { useInView } from "../hooks/useInView.js";
+
 
 import photo from "../assets/images/joelma.jpeg";
 
 export function Avatar() {
 
+    const { ref, isVisible } = useInView();
+
     return (
 
-        <figure className="
-            relative 
-            h-100 w-auto
-            lg:h-120 lg:w-90 
-            after:content-['']
-            after:w-full after:h-full
-            after:border after:border-(--primary-gold)
-            after:absolute
-            after:-top-2.5 after:-left-2.5
-        ">
+        <figure 
+            ref={ref}
+            className={`
+                relative 
+                h-100 w-auto
+                lg:h-120 lg:w-90 
+                transition-all duration-700
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+
+                after:content-['']
+                after:w-full after:h-full
+                after:border after:border-(--primary-gold)
+                after:absolute
+                after:-top-2.5 after:-left-2.5
+        `}>
 
             <img 
                 src={photo} 
@@ -90,7 +99,7 @@ export function Initials() {
             absolute top-0 right-0 
             -translate-y-1/6 translate-x-1/16
             font-cormorant font-bold
-            text-[clamp(10rem,20vw,21rem)]
+            text-[clamp(10rem,19vw,18rem)]
             uppercase text-(--primary-gold)
             leading-none
             opacity-10

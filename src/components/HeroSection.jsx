@@ -4,6 +4,7 @@ import banner1 from "../assets/images/banner1.jpg";
 import banner2 from "../assets/images/banner2.jpg";
 import banner3 from "../assets/images/banner3.jpg";
 import SectionTag from "./SectionTag.jsx";
+import { useInView } from "../hooks/useInView.js";
 
 const images = [banner1, banner2, banner3];
 
@@ -62,8 +63,9 @@ export function HookButton({to = "/", ariaLabel, text, index = 0}) {
 
 export default function HeroSection() {
 
-
     const [index, setIndex] = useState(0);
+
+    const { ref, isVisible} = useInView();
 
     useEffect(() => {
 
@@ -112,11 +114,15 @@ export default function HeroSection() {
 
                 <SectionTag text="Especialista em Gestão Estratégica" />
 
-                <h1 className="
-                    font-cormorant
-                    text-[clamp(2.8rem,8vw,5rem)]
-                    tracking-tight leading-none
-                ">
+                <h1 
+                    ref={ref}
+                    className={`
+                        font-cormorant
+                        text-[clamp(2.8rem,8vw,5rem)]
+                        tracking-tight leading-none
+                        transition-all duration-700
+                        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-[100px]"}
+                `}>
                     Gestão estratégica, <br/> 
                     <span className="text-(--primary-gold) italic">segurança</span> e resultados.
                 </h1>

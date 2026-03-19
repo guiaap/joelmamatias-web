@@ -6,28 +6,9 @@ import instagram from "../assets/images/instagram.png";
 
 export function ContactForm() {
 
-    async function handleSubmit(e) {
-        e.preventDefault();
-
-        const data = {
-            name,
-            email,
-            message
-        };
-
-        await fetch("http://localhost:3001/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-    }
-
     return (
 
         <form 
-            onSubmit={handleSubmit}
             className="
             flex-1 p-5 md:p-8
             w-full max-w-[650px] 
@@ -148,7 +129,7 @@ export default function ContactSection() {
                         href="https://www.instagram.com/jm.gestaointeligente/" 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-4 mb-8
+                        className="flex items-center gap-4 mb-8 w-fit
                     ">
                         <img 
                             src={instagram} 
