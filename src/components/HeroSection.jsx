@@ -5,6 +5,8 @@ import banner2 from "../assets/images/banner2.jpg";
 import banner3 from "../assets/images/banner3.jpg";
 import SectionTag from "./SectionTag.jsx";
 
+const images = [banner1, banner2, banner3];
+
 export function Gradient() {
 
     return (
@@ -30,7 +32,7 @@ export function DecorativeLine() {
     );
 }
 
-export function HookButton({to, ariaLabel, text, index = 0}) {
+export function HookButton({to = "/", ariaLabel, text, index = 0}) {
 
     const isEven = index % 2 === 0;
 
@@ -60,7 +62,6 @@ export function HookButton({to, ariaLabel, text, index = 0}) {
 
 export default function HeroSection() {
 
-    const images = [banner1, banner2, banner3];
 
     const [index, setIndex] = useState(0);
 
@@ -137,7 +138,7 @@ export default function HeroSection() {
                         ariaLabel="Ir para a seção de Serviços" 
                     />
                     <HookButton 
-                        to="/#services"
+                        to="/#about"
                         text="Sobre mim"
                         ariaLabel="Ir para a seção Sobre Mim" 
                         index={1}

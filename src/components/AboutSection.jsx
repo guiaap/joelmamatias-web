@@ -1,7 +1,7 @@
 import SectionTag from "./SectionTag.jsx";
-import { Link } from "react-router-dom";
 import Icon from "./Icon.jsx";
 import SectionTitle from "./SectionTitle.jsx";
+import { HookButton } from "./HeroSection.jsx";
 
 import photo from "../assets/images/joelma.jpeg";
 
@@ -9,22 +9,25 @@ export function Avatar() {
 
     return (
 
-        <figure className="relative max-h-[400px] max-w-[400px] ">
+        <figure className="
+            relative 
+            h-100 w-auto
+            lg:h-120 lg:w-90 
+            after:content-['']
+            after:w-full after:h-full
+            after:border after:border-(--primary-gold)
+            after:absolute
+            after:-top-2.5 after:-left-2.5
+        ">
 
             <img 
-            src={photo} 
-            alt="Foto de Joelma Matias" 
-            className="
-            relative z-10
-            w-full h-full
-            object-cover
-            shadow-md
-            "/>
-
-            <div className="
-            absolute top-[-10px] left-[-10px]
-            w-full h-full
-            border border-(--primary-gold)
+                src={photo} 
+                alt="Foto de Joelma Matias" 
+                className="
+                    relative z-5
+                    w-full h-full
+                    object-cover
+                    shadow-md
             "/>
 
         </figure>
@@ -37,9 +40,10 @@ export function Diferential({iconName, iconColor, text, textColor, bgColor}) {
     return (
 
         <li className={`
-        flex items-center gap-1 
-        px-6 py-3 
-        text-(${textColor}) bg-(--dark-gold) bg-(${bgColor})
+            flex items-center gap-1 
+            px-6 py-3 
+            text-(${textColor}) bg-(${bgColor})   
+            bg-(--dark-gold)
         `}>
            <Icon name={iconName} color={iconColor} /> {text}
         </li>
@@ -50,51 +54,65 @@ export function Diferentials() {
 
     return (
 
-        <ul className="absolute -bottom-1/4 -right-1/25 z-20 flex flex-col gap-1">
+        <ul className="absolute -bottom-1/6 -right-1/30 z-20 flex flex-col gap-1">
 
-            <Diferential iconName="person" text="Atendimento Humanizado" textColor="--white" bgColor="--primary-brown" />
-            <Diferential iconName="bolt" text="Agilidade" textColor="--white"  />
-            <Diferential iconName="calendar" iconColor="#FFFFF" text="+20 Anos de Experiência" bgColor="--primary-gold"  />
+            <Diferential 
+                iconName="person" 
+                text="Atendimento Humanizado" 
+                textColor="--white" 
+                bgColor="--primary-gold" 
+            />
+
+            <Diferential 
+                iconName="bolt" 
+                text="Agilidade" 
+                textColor="--white"  
+                bgColor="--dark-gold"
+            />
+
+            <Diferential 
+                iconName="calendar"  
+                text="+20 Anos de Experiência" 
+                textColor="--white"  
+                bgColor="--primary-brown" 
+             />
 
         </ul>
 
     );
 }
 
-export function ContactButton() {
-
-    return (
-
-        <Link to="/#contact"
-        className="
-        inline-block w-fit 
-        px-6 py-3
-        uppercase
-        bg-(--primary-gold)
-        transition-colors duration-300
-        hover:bg-(--secondary-gold)
-        ">
-            Entre em contato
-        </Link>
-    )
-}
-
 export function Initials() {
 
     return (
         <span className="
-        inline-block
-        absolute top-0 right-0 
-        -translate-y-1/6 translate-x-1/16
-        font-cormorant font-bold
-        text-[clamp(10rem,20vw,21rem)]
-        uppercase text-(--primary-gold)
-        leading-none
-        opacity-10
-        pointer-events-none select-none
+            inline-block
+            absolute top-0 right-0 
+            -translate-y-1/6 translate-x-1/16
+            font-cormorant font-bold
+            text-[clamp(10rem,20vw,21rem)]
+            uppercase text-(--primary-gold)
+            leading-none
+            opacity-10
+            pointer-events-none select-none
         ">
             JM
         </span>
+    )
+}
+
+export function Catchphrase() {
+
+    return (
+
+        <p className="
+            font-cormorant italic 
+            text-[clamp(1.4rem,2vw,1.6rem)]
+            pl-3 
+            border-l-2 border-(--dark-gold)
+        ">
+            "Do planejamento à execução — com organização, conformidade e resultados práticos."
+        </p>
     )
 }
 
@@ -105,11 +123,9 @@ export default function AboutSection() {
         <section id="about">
 
             <div className="
-            flex flex-col
-            items-center justify-between gap-10
-            max-w-(--container-large) mx-auto
-
-            lg:flex-row
+                flex flex-col lg:flex-row
+                items-center justify-between gap-8
+                max-w-(--container-large) mx-auto  
             ">
 
                 <div className="relative order-2 lg:order-1">
@@ -117,7 +133,7 @@ export default function AboutSection() {
                     <Diferentials />
                 </div>
 
-                <article className="relative justify-center order-1 lg:order-2 max-w-[650px]">
+                <article className="relative justify-center order-1 lg:order-2 max-w-162.5">
 
                     <SectionTag text="Quem sou eu" color="--primary-brown" />
 
@@ -142,12 +158,7 @@ export default function AboutSection() {
                             onde desenvolvi expertise em gestão de pessoas, processos e segurança do trabalho.
                         </p>
 
-                        <p className="
-                        font-cormorant italic text-[clamp(1.4rem,2vw,1.6rem)]
-                        pl-3 border-l-[2px] border-(--dark-gold)
-                        ">
-                            "Do planejamento à execução — com organização, conformidade e resultados práticos."
-                        </p>
+                        <Catchphrase />
 
                         <p>
                             Também sou Administradora Judicial e Perita registrada no CRA-SC,
@@ -157,10 +168,12 @@ export default function AboutSection() {
 
                         <ul className="
                         flex flex-col gap-2 leading-tight
+
                         [&>li]:flex [&>li]:items-center
+
                         [&>li]:before:inline-block
                         [&>li]:before:content-[' ']
-                        [&>li]:before:w-[10px] [&>li]:before:h-[2px]
+                        [&>li]:before:w-2.5 [&>li]:before:h-0.5
                         [&>li]:before:mr-2
                         [&>li]:before:bg-(--primary-gold)
                         ">
@@ -171,7 +184,11 @@ export default function AboutSection() {
                     </div>
 
 
-                    <ContactButton />
+                    <HookButton
+                        to="/#contact"
+                        text="Entre em contato"
+                        ariaLabel="Ir para a seção de Contato"
+                    />
 
                 </article>
         

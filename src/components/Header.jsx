@@ -58,7 +58,9 @@ export function MenuItem({text, to, setIsOpen}) {
                     border-b border-b-(--transparent-white-strong)
                     lg:border-none
                     transition-all duration-300
+                    
                     hover:text-(--primary-gold)
+
                     after:content-[''] after:absolute
                     after:bottom-0 after:left-0
                     after:h-px after:w-0
