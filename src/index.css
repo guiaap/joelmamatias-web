@@ -42,4 +42,8 @@
   --font-dm: "DM Sans", sans-serif;
 }
 
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--primary-background); }
+::-webkit-scrollbar-thumb { background: var(--primary-gold); border-radius: 3px; }
+
 

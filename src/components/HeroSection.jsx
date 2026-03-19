@@ -118,7 +118,7 @@ export default function HeroSection() {
                     ref={ref}
                     className={`
                         font-cormorant
-                        text-[clamp(2.8rem,8vw,5rem)]
+                        text-[clamp(2.8rem,8vw,5.5rem)]
                         tracking-tight leading-none
                         transition-all duration-700
                         ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-[100px]"}
