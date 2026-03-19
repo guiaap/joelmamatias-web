@@ -8,7 +8,7 @@ import ContactSection from "../components/ContactSection.jsx";
 
 export default function Home() {
 
-const location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
 
@@ -26,11 +26,13 @@ const location = useLocation();
     return (
 
         <div className="[&>section]:py-15 [&>section]:px-5">
+
           <HeroSection />
           <AboutSection />
           <ServicesSection />
           <BlogSection />
           <ContactSection />
+          
         </div>
           
     );

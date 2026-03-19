@@ -1,7 +1,5 @@
 
-
-export default function Icon ({name, size = "30px", color = "#FFFFFF"}) {
-
+export default function Icon({name, size="30px", color ="#FFFFFF"}) {
 
     switch(name) {
 
@@ -85,6 +83,4 @@ export default function Icon ({name, size = "30px", color = "#FFFFFF"}) {
         
         default: return;
     }
-
-    
 }
