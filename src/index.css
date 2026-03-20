@@ -22,6 +22,7 @@
   --primary-gold: #C9A96E;
   --secondary-gold: #E8D4B0;
   --dark-gold: #8B6F47;
+  --bright-gold: #f6ce83;
 
   --transparent-white-smooth: #FFFFFF99;
   --transparent-white-strong: #FFFFFF50;
@@ -35,6 +36,8 @@
   --black: #000000;
   --overlay: #00000044;
 
+  --gray: #4b4444;
+
 }
 
 @theme {
@@ -45,5 +48,4 @@
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--primary-background); }
 ::-webkit-scrollbar-thumb { background: var(--primary-gold); border-radius: 3px; }
-
 
