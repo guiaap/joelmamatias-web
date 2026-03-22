@@ -14,7 +14,7 @@ export function BlogCard({id, image, alt, date, title, description}) {
         <article 
         style={{ scrollSnapAlign: "start" }}
         className="
-            relative min-w-[300px] pb-8
+            relative min-w-75 pb-8
             flex-1
             snap-start
             border border-(--transparent-gold)
@@ -27,10 +27,9 @@ export function BlogCard({id, image, alt, date, title, description}) {
             <img 
                 src={image} 
                 alt={alt} 
-                className="h-[200px] md:h-[250px] w-full object-cover"
+                className="h-50 md:h-62.5 w-full object-cover"
             />
             
-
             <div className="
                 flex flex-col gap-3 
                 h-full p-5 
@@ -56,12 +55,12 @@ export function BlogCard({id, image, alt, date, title, description}) {
                     to={`/blogpost/${id}`}
                     className="
                         absolute bottom-5
-                        w-[155px] 
+                        w-38.75 
                         flex items-center justify-between
                         text-(--dark-gold) text-[0.8rem]
                         uppercase tracking-widest
                         transition-all duration-300
-                        hover:w-[160px] hover:text-(--primary-brown)
+                        hover:w-40 hover:text-(--primary-brown)
                         hover:[&>svg]:fill-(--primary-brown)
                     ">
 
@@ -98,10 +97,10 @@ export function Indicator({isActive}) {
     return (
 
         <span className={`
-        h-3 w-3
-        rounded-full
-        border border-(--dark-gold)
-        ${ isActive ? "bg-(--primary-gold)" : "bg-transparent"}
+            h-3 w-3
+            rounded-full
+            border border-(--dark-gold)
+            ${ isActive ? "bg-(--primary-gold)" : "bg-transparent"}
         `}>
 
         </span>
@@ -145,6 +144,7 @@ export default function BlogSection() {
             <div className="max-w-(--container) mx-auto">
 
                 <SectionTag text="Conhecimento" />
+                
                 <SectionTitle
                     text1="Últimas do " text2="Blog"
                     color1="--primary-brown" color2="--primary-gold"

@@ -37,9 +37,12 @@ export function HookButton({to = "/", ariaLabel, text, index = 0}) {
 
     const isEven = index % 2 === 0;
 
+    const { ref, isVisible} = useInView();
+
     return (
 
         <Link
+            ref={ref}
             to={to}
             aria-label={ariaLabel}
             className={`
@@ -48,6 +51,7 @@ export function HookButton({to = "/", ariaLabel, text, index = 0}) {
                 text-[0.9rem] text-(--primary-brown)
                 font-medium uppercase tracking-widest
                 transition-all duration-300
+                ${isVisible ? "opacity-100 translate-0" : "opacity-0 translate-y-10" }
                 ${ isEven 
                     ? "bg-(--primary-gold) hover:bg-(--secondary-gold) hover:-translate-y-1.25"
                     : ` border border-(--transparent-white-strong) 
@@ -121,17 +125,21 @@ export default function HeroSection() {
                         text-[clamp(2.8rem,8vw,5.5rem)]
                         tracking-tight leading-none
                         transition-all duration-700
-                        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-[100px]"}
+                        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-25"}
                 `}>
                     Gestão estratégica, <br/> 
                     <span className="text-(--primary-gold) italic">segurança</span> e resultados.
                 </h1>
 
-                <p className="
+                <p 
+                    ref={ref}
+                    className={`
                     max-w-(--container-small) 
                     text-[clamp(1rem,2vw,1.2rem)] 
-                    text-(--transparent-white-smooth)"
-                >
+                    text-(--transparent-white-smooth)
+                    transition-all duration-1000
+                    ${isVisible ? "opacity-100 translate-0" : "opacity-0 -translate-x-10" }    
+                `}>
                     Soluções personalizadas em Administração, Departamento Pessoal, Segurança do Trabalho, 
                     Contratos e Gestão de Pessoas para empresas que buscam excelência e conformidade.
                 </p>

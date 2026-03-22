@@ -10,32 +10,32 @@ export function ContactForm() {
 
         <form 
             className="
-            flex-1 p-5 md:p-8
-            w-full max-w-[650px] 
-            bg-[#FFFFFF05]
-            border border-[#FFFFFF20]
+                flex-1 p-5 md:p-8
+                w-full max-w-[650px] 
+                bg-[#FFFFFF05]
+                border border-[#FFFFFF20]
 
-            [&>div]:flex [&>div]:flex-col [&>div]:gap-2
-            [&>div]:mb-6
+                [&>div]:flex [&>div]:flex-col [&>div]:gap-2
+                [&>div]:mb-6
 
-            [&>div>label]:text-(--transparent-white-smooth)
-            [&>div>label]:text-[0.8rem]
-            [&>div>label]:tracking-widest
-            [&>div>label]:uppercase
+                [&>div>label]:text-(--transparent-white-smooth)
+                [&>div>label]:text-[0.8rem]
+                [&>div>label]:tracking-widest
+                [&>div>label]:uppercase
 
-            [&>div>input,textarea]:border-2 
-            [&>div>input,textarea]:border-[#FFFFFF20]
-            [&>div>input,textarea]:bg-[#FFFFFF10]
-            [&>div>input,textarea]:text-(--white)
-            [&>div>input,textarea]:transition-all
-            [&>div>input,textarea]:duration-500
-            [&>div>input,textarea]:px-3 [&>div>input,textarea]:py-3
-            [&>div>input::placeholder,textarea::placeholder]:text-[#FFFFFF70]
-            [&>div>input::placeholder,textarea::placeholder]:text-[0.9rem]
-            [&>div>input::placeholder,textarea::placeholder]:font-light
-            [&>div>input:focus,textarea:focus]:outline-none
-            [&>div>input:focus,textarea:focus]:border-2
-            [&>div>input:focus,textarea:focus]:border-(--primary-gold)
+                [&>div>input,textarea]:border-2 
+                [&>div>input,textarea]:border-[#FFFFFF20]
+                [&>div>input,textarea]:bg-[#FFFFFF10]
+                [&>div>input,textarea]:text-(--white)
+                [&>div>input,textarea]:transition-all
+                [&>div>input,textarea]:duration-500
+                [&>div>input,textarea]:px-3 [&>div>input,textarea]:py-3
+                [&>div>input::placeholder,textarea::placeholder]:text-[#FFFFFF70]
+                [&>div>input::placeholder,textarea::placeholder]:text-[0.9rem]
+                [&>div>input::placeholder,textarea::placeholder]:font-light
+                [&>div>input:focus,textarea:focus]:outline-none
+                [&>div>input:focus,textarea:focus]:border-2
+                [&>div>input:focus,textarea:focus]:border-(--primary-gold)
         ">
 
             <div>
@@ -80,14 +80,14 @@ export function ContactForm() {
                 type="submit" 
                 value="Enviar Mensagem" 
                 className="
-                block w-full py-3
-                uppercase tracking-widest
-                text-[0.9rem]
-                bg-(--primary-gold)
-                cursor-pointer
-                transition-all duration-300
-                hover:bg-(--secondary-gold)
-                hover:-translate-y-[5px]
+                    block w-full py-3
+                    uppercase tracking-widest
+                    text-[0.9rem]
+                    bg-(--primary-gold)
+                    cursor-pointer
+                    transition-all duration-300
+                    hover:bg-(--secondary-gold)
+                    hover:-translate-y-1.25
             "/>
             </form>
     );

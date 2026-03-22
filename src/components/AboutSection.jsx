@@ -127,6 +127,8 @@ export function Catchphrase() {
 
 export default function AboutSection() {
 
+    const { ref, isVisible } = useInView();
+
     return (
 
         <section id="about">
@@ -142,7 +144,13 @@ export default function AboutSection() {
                     <Diferentials />
                 </div>
 
-                <article className="relative justify-center order-1 lg:order-2 max-w-162.5">
+                <article 
+                    ref={ref}
+                    className="
+                        relative 
+                        justify-center order-1 lg:order-2 
+                        max-w-162.5  
+                ">
 
                     <SectionTag text="Quem sou eu" color="--primary-brown" />
 
@@ -153,7 +161,13 @@ export default function AboutSection() {
 
                     <Initials />
 
-                    <div className="flex flex-col gap-5 mb-8 text-[clamp(1rem,2vw,1.1rem)]">
+                    <div className={`
+                            flex flex-col gap-5 
+                            mb-8 
+                            text-[clamp(1rem,2vw,1.1rem)]
+                            transition-all duration-300
+                            ${isVisible ? "opacity-100" : "opacity-0" }
+                    `}>
 
                         <p>
                             Sou formada em Administração de Empresas e pós-graduada em Gestão Estratégica de Pessoas.
@@ -176,15 +190,15 @@ export default function AboutSection() {
                         </p>
 
                         <ul className="
-                        flex flex-col gap-2 leading-tight
+                            flex flex-col gap-2 leading-tight
 
-                        [&>li]:flex [&>li]:items-center
+                            [&>li]:flex [&>li]:items-center
 
-                        [&>li]:before:inline-block
-                        [&>li]:before:content-[' ']
-                        [&>li]:before:w-2.5 [&>li]:before:h-0.5
-                        [&>li]:before:mr-2
-                        [&>li]:before:bg-(--primary-gold)
+                            [&>li]:before:inline-block
+                            [&>li]:before:content-[' ']
+                            [&>li]:before:w-2.5 [&>li]:before:h-0.5
+                            [&>li]:before:mr-2
+                            [&>li]:before:bg-(--primary-gold)
                         ">
                             <li>Atendimento próximo e humanizado.</li>
                             <li>Processos claros, com rotinas e indicadores.</li>
