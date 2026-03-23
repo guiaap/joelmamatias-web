@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import banner1 from "../assets/images/banner1.jpg";
-import banner2 from "../assets/images/banner2.jpg";
-import banner3 from "../assets/images/banner3.jpg";
-import SectionTag from "./SectionTag.jsx";
-import { useInView } from "../hooks/useInView.js";
+import banner1 from "../../assets/images/banner1.jpg";
+import banner2 from "../../assets/images/banner2.jpg";
+import banner3 from "../../assets/images/banner3.jpg";
+import SectionTag from "../SectionTag.jsx";
+import { useInView } from "../../hooks/useInView.js";
 
 const images = [banner1, banner2, banner3];
 

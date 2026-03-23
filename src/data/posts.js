@@ -6,6 +6,7 @@ export const posts = [
     {   
         id: "esocial-2025",
         category: "eSocial",
+        author: "Joelma Matias",
         image: post1Image,
         alt: "Imagem representando o Post",
         date: "04 de Novembro de 2025",
@@ -16,6 +17,7 @@ export const posts = [
     {
         id: "importancia-documentacao-correta",
         category: "Documentação",
+        author: "Joelma Matias",
         image: post2Image,
         alt: "Imagem representando o Post",
         date: "04 de Setembro de 2025",
@@ -26,6 +28,7 @@ export const posts = [
     {
         id: "importancia-treinamento",
         category: "Treinamento",
+        author: "Joelma Matias",
         image: post3Image, 
         alt: "Imagem representando o Post",
         date: "04 de Setembro de 2025",

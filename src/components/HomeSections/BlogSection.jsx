@@ -1,10 +1,10 @@
-import SectionTag from "./SectionTag.jsx";
-import SectionTitle from "./SectionTitle.jsx";
+import SectionTag from "../SectionTag.jsx";
+import SectionTitle from "../SectionTitle.jsx";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import Icon from "./Icon.jsx";
+import Icon from "../Icon.jsx";
 import { useState } from "react";
-import { posts } from "../data/posts.js";
+import { posts } from "../../data/posts.js";
 
 
 export function BlogCard({id, image, alt, date, title, description}) {
@@ -12,17 +12,17 @@ export function BlogCard({id, image, alt, date, title, description}) {
     return (
 
         <article 
-        style={{ scrollSnapAlign: "start" }}
-        className="
-            relative min-w-75 pb-8
-            flex-1
-            snap-start
-            border border-(--transparent-gold)
-            shadow-lg
-            overflow-hidden
-            transition-all duration-300
-            hover:scale-102
-            hover:shadow-xl
+            style={{ scrollSnapAlign: "start" }}
+            className="
+                relative min-w-75 pb-8
+                flex-1
+                snap-start
+                border border-(--transparent-gold)
+                shadow-lg
+                overflow-hidden
+                transition-all duration-300
+                hover:scale-102
+                hover:shadow-xl
         ">
             <img 
                 src={image} 

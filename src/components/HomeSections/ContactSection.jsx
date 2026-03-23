@@ -1,8 +1,8 @@
-import SectionTag from "./SectionTag.jsx";
-import SectionTitle from "./SectionTitle.jsx";
-import Icon from "./Icon.jsx";
+import SectionTag from "../SectionTag.jsx";
+import SectionTitle from "../SectionTitle.jsx";
+import Icon from "../Icon.jsx";
 
-import instagram from "../assets/images/instagram.png";
+import instagram from "../../assets/images/instagram.png";
 
 export function FormInput({
     as = "input",
@@ -40,7 +40,7 @@ export function FormInput({
                         text-(--white)
                         bg-[#FFFFFF10]
                         border-2 border-[#FFFFFF20]
-                        transition-all duration-50
+                        transition-all duration-300
 
                         placeholder:text-[#FFFFFF70]
                         placeholder:text-[0.9rem]
@@ -85,6 +85,7 @@ export function FormInput({
                     ${type === "submit" ? `
                         block w-full
                         uppercase tracking-widest
+                        font-medium
                         bg-(--primary-gold)
                         cursor-pointer
                         hover:bg-(--secondary-gold)
@@ -154,10 +155,12 @@ export function ContactForm() {
     );
 }
 
-export function Separator() {
+export function Separator({width, color}) {
 
     return (
-        <div className="h-px w-20 my-5 bg-(--transparent-white-strong)" />
+        <div 
+            style={{ width: `${width}`, backgroundColor: `var(${color})` }}
+            className="h-px my-5" />
     )
 }
 
@@ -255,7 +258,7 @@ export default function ContactSection() {
                         Preencha o formulário ou use um dos canais abaixo.
                     </p>
 
-                   <Separator />
+                   <Separator width="20px" color="--bg-transparent-smooth" />
 
                     <h3 className="uppercase text-[0.8rem] tracking-widest mb-5">
                         Siga-me

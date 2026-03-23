@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import HeroSection from "../components/HeroSection.jsx";
-import AboutSection from "../components/AboutSection.jsx";
-import ServicesSection from "../components/ServicesSection.jsx";
-import BlogSection from "../components/BlogSection.jsx";
-import ContactSection from "../components/ContactSection.jsx";
+import HeroSection from "../components/HomeSections/HeroSection.jsx";
+import AboutSection from "../components/HomeSections/AboutSection.jsx";
+import ServicesSection from "../components/HomeSections/ServicesSection.jsx";
+import BlogSection from "../components/HomeSections/BlogSection.jsx";
+import ContactSection from "../components/HomeSections/ContactSection.jsx";
 
 export default function Home() {
 

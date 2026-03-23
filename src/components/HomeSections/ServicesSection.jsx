@@ -1,6 +1,6 @@
-import SectionTag from "./SectionTag.jsx";
-import SectionTitle from "./SectionTitle.jsx";
-import { services } from "../data/services.js";
+import SectionTag from "../SectionTag.jsx";
+import SectionTitle from "../SectionTitle.jsx";
+import { services } from "../../data/services.js";
 
 export function ServiceCard({number, image, alt, title, list}) {
 

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import MainLayout from "./components/MainLayout.jsx";
+import MainLayout from "./components/Layouts/MainLayout.jsx";
 import Home from "./pages/Home.jsx";
-import PostLayout from "./components/PostLayout.jsx";
+import PostLayout from "./components/Layouts/PostLayout.jsx";
 import BlogPost from "./pages/BlogPost.jsx"
 
 export default function App() {

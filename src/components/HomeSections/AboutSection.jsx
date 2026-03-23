@@ -1,11 +1,11 @@
-import SectionTag from "./SectionTag.jsx";
-import Icon from "./Icon.jsx";
-import SectionTitle from "./SectionTitle.jsx";
+import SectionTag from "../SectionTag.jsx";
+import Icon from "../Icon.jsx";
+import SectionTitle from "../SectionTitle.jsx";
 import { HookButton } from "./HeroSection.jsx";
-import { useInView } from "../hooks/useInView.js";
+import { useInView } from "../../hooks/useInView.js";
 
 
-import photo from "../assets/images/joelma.jpeg";
+import photo from "../../assets/images/joelma.jpeg";
 
 export function Avatar() {
 

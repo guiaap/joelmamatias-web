@@ -1,7 +1,7 @@
-import Header from "./Header.jsx";
+import Header from "../Header.jsx";
 import { Outlet } from "react-router-dom";
-import Footer from "./Footer.jsx";
-import WhatsappButton from "./WhatsappButton.jsx";
+import Footer from "../Footer.jsx";
+import WhatsappButton from "../WhatsappButton.jsx";
 
 export default function MainLayout() {
 
