@@ -9,6 +9,7 @@
   --master-container: 2000px;
   --container: 1300px;
   --container-large: 1200px;
+  --container-medium: 800px;
   --container-small: 600px;
   --container-extra-small: 400px;
 
@@ -27,7 +28,8 @@
 
   --transparent-white-smooth: #FFFFFF99;
   --transparent-white-strong: #FFFFFF50;
-  --transparent-gold: #c9a96e54;
+  --transparent-gold: #c9a96e7a;
+  --transparent-bright-gold: #f6ce8333;
 
   --green: #25D366;
   --transparent-green-smooth: rgba(37,211,102,.35);

@@ -1,6 +1,8 @@
-
+import { useInView } from "../hooks/useInView.js";
 
 export default function SectionTag({text, color = "--primary-gold"}) {
+
+    const { ref, isVisible } = useInView();
 
     return (
         

@@ -4,7 +4,7 @@ import { Separator } from "../HomeSections/ContactSection.jsx"
 
 export function PostPath() {
 
-    const post = useContext(PostContext);
+    const { post } = useContext(PostContext);
 
     return (
 
@@ -32,7 +32,7 @@ export function PostPath() {
 
 export function PostTitle() {
 
-    const post = useContext(PostContext);
+    const { post } = useContext(PostContext);
 
     return (
 
@@ -51,7 +51,7 @@ export function PostTitle() {
 
 export function PostAuthor() {
 
-    const post = useContext(PostContext);
+    const { post } = useContext(PostContext);
 
     return (
 
@@ -61,7 +61,7 @@ export function PostAuthor() {
                 h-7 w-7
                 flex items-center justify-center
                 font-cormorant font-bold
-                text-(--primary-brown) text-[0.9rem]
+                text-(--primary-brown) text-[1rem]
                 rounded-full
                 bg-(--primary-gold)
             ">
@@ -76,7 +76,7 @@ export function PostAuthor() {
 
 export function PostDate() {
 
-    const post = useContext(PostContext);
+    const { post } = useContext(PostContext);
 
     return (
 
@@ -88,7 +88,7 @@ export function PostDate() {
 
 export function PostReadingTime() {
 
-    const post = useContext(PostContext);
+    const { post } = useContext(PostContext);
 
     return (
         
@@ -111,17 +111,20 @@ export function BallSeparator({size, color}) {
 
 export default function PostHeroSection() {
 
-    const post = useContext(PostContext);
+    const { post } = useContext(PostContext);
 
     return (
 
         <section 
             style={{ backgroundImage: `url(${post.image})` }}
             className="
+                flex items-center
+                py-10 px-5
                 min-h-100
                 bg-(--transparent-brown-strong)
                 bg-blend-darken
                 bg-cover bg-center bg-no-repeat
+                shadow-xl
         ">
 
             <div className="max-w-(--container) mx-auto">
