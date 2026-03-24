@@ -1,20 +1,27 @@
 import { useContext } from "react";
 import { PostContext } from "../../contexts.js";
-import { Separator } from "../HomeSections/ContactSection.jsx"
+import { Separator } from "../HomeSections/ContactSection.jsx";
+import { useInView } from "../../hooks/useInView.js";
 
 export function PostPath() {
 
     const { post } = useContext(PostContext);
+    const { ref, isVisible } = useInView();
 
     return (
 
-        <div className="
-            w-fit mx-auto md:mx-0
-            flex gap-1 items-center
-            text-(--transparent-white-smooth)
-            text-[0.8rem]
-            uppercase tracking-widest
-        ">
+        <div 
+            ref={ref}
+            className={`
+                w-fit mx-auto md:mx-0
+                flex gap-1 items-center
+                text-(--transparent-white-smooth)
+                text-[0.8rem]
+                uppercase tracking-widest
+                transition-all duration-700
+
+                ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}
+            `}>
             <span>Blog &gt;</span>
         
             <span className="
@@ -33,17 +40,23 @@ export function PostPath() {
 export function PostTitle() {
 
     const { post } = useContext(PostContext);
+    const { ref, isVisible } = useInView();
 
     return (
 
-        <h1 className="
-            mt-5
-            font-cormorant font-bold
-            text-(--white)
-            text-center md:text-left
-            text-[clamp(2rem,5vw,3.5rem)]
-            leading-tight
-        ">
+        <h1 
+            ref={ref}
+            className={`
+                mt-5
+                font-cormorant font-bold
+                text-(--white)
+                text-center md:text-left
+                text-[clamp(2rem,5vw,3.5rem)]
+                leading-tight
+                transition-all duration-700
+
+                ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}
+            `}>
             {post.title}
         </h1>
     )
@@ -112,6 +125,7 @@ export function BallSeparator({size, color}) {
 export default function PostHeroSection() {
 
     const { post } = useContext(PostContext);
+    const { ref, isVisible } = useInView();
 
     return (
 
@@ -136,11 +150,15 @@ export default function PostHeroSection() {
                     <Separator width="50px" color="--dark-gold" />
                 </div>
                 
-                <div className="
-                    flex flex-col md:flex-row gap-2
-                    items-center md:justify-start
-                    text-[0.8rem] text-(--transparent-white-smooth)
-                ">
+                <div 
+                    ref={ref}
+                    className={`
+                        flex flex-col md:flex-row gap-2
+                        items-center md:justify-start
+                        text-[0.8rem] text-(--transparent-white-smooth)
+                        transition-all duration-700
+                        ${ isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}
+                    `}>
                     <PostAuthor />
                     <BallSeparator size="3px" color="--transparent-white-smooth" />
                     <PostDate />

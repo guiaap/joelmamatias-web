@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { PostContext } from "../../contexts.js";
+import { useInView } from "../../hooks/useInView.js";
 
 export function AuthorCard() {
 
+    const { ref, isVisible } = useInView();
+
     return (
 
-        <div className="
-            w-75 h-fit p-5 
-            bg-(--primary-brown)
-            shadow-md
-        ">
+        <div   
+            ref={ref} 
+            className={`
+                w-75 h-fit p-5 
+                bg-(--primary-brown)
+                shadow-md
+                transition-all duration-700
+
+                ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}
+            `}>
 
             <div className="
                 flex items-center gap-3
@@ -65,14 +73,21 @@ export function AuthorCard() {
 
 export function RelatedProductCard() {
 
+    const { ref, isVisible } = useInView();
+
     return (
 
-        <div className="
-            w-75 p-5 
-            bg-(--transparent-bright-gold)
-            border border-(--transparent-gold)
-            shadow-md
-        ">
+        <div 
+            ref={ref}
+            className={`
+                w-75 p-5 
+                bg-(--transparent-bright-gold)
+                border border-(--transparent-gold)
+                shadow-md
+                transtion-all duration-700
+
+                ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}
+            `}>
 
             <div className="
                 uppercase tracking-widest
@@ -137,8 +152,6 @@ export function RelatedProductCard() {
 
 export function RelatedPostsItem({id, image, category, title}) {
 
-    
-
     return (
 
         <li>
@@ -188,10 +201,18 @@ export function RelatedPostsItem({id, image, category, title}) {
 export function RelatedPostsCard() {
 
     const { previousPost, nextPost } = useContext(PostContext);
+    const { ref, isVisible } = useInView();
 
     return (
 
-        <div className="w-75">
+        <div 
+            ref={ref}
+            className={`
+                w-75
+                transtion-all duration-700
+
+                ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}
+        `}>
             <div className="
                     uppercase tracking-widest
                     py-1 px-2 mb-2

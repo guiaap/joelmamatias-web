@@ -5,25 +5,33 @@ import { Link } from "react-router-dom";
 import Icon from "../Icon.jsx";
 import { useState } from "react";
 import { posts } from "../../data/posts.js";
+import { useInView } from "../../hooks/useInView.js";
 
 
 export function BlogCard({id, image, alt, date, title, description}) {
 
+    const { ref, isVisible } = useInView();
+
     return (
 
         <article 
+            ref={ref}
             style={{ scrollSnapAlign: "start" }}
-            className="
+            className={`
                 relative min-w-75 pb-8
                 flex-1
                 snap-start
                 border border-(--transparent-gold)
                 shadow-lg
                 overflow-hidden
-                transition-all duration-300
+                transition-all duration-500
+
                 hover:scale-102
                 hover:shadow-xl
-        ">
+
+                ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}
+
+            `}>
             <img 
                 src={image} 
                 alt={alt} 
@@ -151,12 +159,13 @@ export default function BlogSection() {
                 />
                 
                 <div 
-                ref={carouselRef} 
-                className="
-                    flex gap-5 md:gap-8 justify justify-between
-                    p-4 pb-10
-                    overflow-x-auto snap-x snap-mandatory 
-                    scroll-smooth
+                    style={{ scrollbarWidth: "none"}}
+                    ref={carouselRef} 
+                    className="
+                        flex gap-5 md:gap-8 justify justify-between
+                        p-4 pb-10
+                        overflow-x-auto snap-x snap-mandatory 
+                        scroll-smooth
                 ">
                     {posts.map((post, index) => (
                         <BlogCard

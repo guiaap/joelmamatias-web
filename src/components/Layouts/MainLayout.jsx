@@ -14,6 +14,7 @@ export default function MainLayout() {
         bg-(--primary-background)
         shadow-lg
         font-dm
+        overflow-x-hidden
       ">
 
         <Header isMainLayout={true} />

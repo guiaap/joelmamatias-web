@@ -1,28 +1,35 @@
 import SectionTag from "../SectionTag.jsx";
 import SectionTitle from "../SectionTitle.jsx";
 import { services } from "../../data/services.js";
+import { useInView } from "../../hooks/useInView.js";
 
 export function ServiceCard({number, image, alt, title, list}) {
 
+    const { ref, isVisible } = useInView();
+
     return (  
 
-        <div className="
-            flex flex-col gap-3
-            px-5 pt-1 pb-5
-            border-[0.25px] border-(--transparent-gold)
-            bg-[#ffffff09] 
-            transtion-all duration-300
+        <div 
+            ref={ref}
+            className={`
+                flex flex-col gap-3
+                px-5 pt-1 pb-5
+                border-[0.25px] border-(--transparent-gold)
+                bg-[#ffffff09] 
+                transtion-all duration-500
 
-            after:content-['']
-            after:absolute after:bottom-0 after:left-0
-            after:h-0.5 after:w-0
-            after:bg-(--primary-gold) 
-            after:transition-all after:duration-500
+                after:content-['']
+                after:absolute after:bottom-0 after:left-0
+                after:h-0.5 after:w-0
+                after:bg-(--primary-gold) 
+                after:transition-all after:duration-500
 
-            hover:bg-[#c9a96e15]
-            hover:-translate-y-2
-            hover:after:w-full
-        ">
+                hover:bg-[#c9a96e15]
+                hover:-translate-y-2
+                hover:after:w-full
+
+                ${ isVisible ? "translate-y-0 opacity-100" : "-translate-y-5 opacity-0" }
+        `}>
 
             <div className="flex items-center justify-between  ">
 
@@ -65,6 +72,8 @@ export function ServiceCard({number, image, alt, title, list}) {
 
 export default function ServicesSection() {
 
+    const { ref, isVisible } = useInView();
+
     return (
 
         <section 
@@ -90,16 +99,20 @@ export default function ServicesSection() {
                         />
                     </div>
 
-                    <p className="
+                    <p 
+                        ref={ref}
+                        className={`
                         text-(--transparent-white-smooth)
                         max-w-(--container-extra-small)
-                    ">
+                        transition-all duration-700
+                        ${ isVisible ? "translate-x-0 opacity-100" : "translate-x-5 opacity-0" }
+                    `}>
                         Soluções integradas para empresas que buscam excelência operacional, 
                         conformidade legal e gestão eficiente de pessoas.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pt-5">
                     {services.map((service, index) => (
                         <ServiceCard 
                             key={index}

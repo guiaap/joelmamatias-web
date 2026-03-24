@@ -15,7 +15,7 @@ export default function SectionTitle({text1, text2, color1, color2}) {
                 leading-tight
                 my-4
                 transition-all duration-700
-                ${ isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-40"}
+                ${ isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}
         `}>
 
             {text1}

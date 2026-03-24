@@ -6,8 +6,13 @@ export default function SectionTag({text, color = "--primary-gold"}) {
 
     return (
         
-        <div>
-            
+        <div 
+            ref={ref} 
+            className={`
+                transition-all duration-700
+                ${ isVisible ? "translate-x-0 opacity-100" : "translate-x-40 opacity-0" }
+            `}
+        >
             <p 
             style={{ color: `var(${color})` }}
             className={`

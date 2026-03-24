@@ -165,8 +165,8 @@ export default function AboutSection() {
                             flex flex-col gap-5 
                             mb-8 
                             text-[clamp(1rem,2vw,1.1rem)]
-                            transition-all duration-300
-                            ${isVisible ? "opacity-100" : "opacity-0" }
+                            transition-all duration-700
+                            ${isVisible ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-2" }
                     `}>
 
                         <p>

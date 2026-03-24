@@ -50,7 +50,7 @@ export function HookButton({to = "/", ariaLabel, text, index = 0}) {
                 px-5 py-3
                 text-[0.9rem] text-(--primary-brown)
                 font-medium uppercase tracking-widest
-                transition-all duration-300
+                transition-all duration-700
                 ${isVisible ? "opacity-100 translate-0" : "opacity-0 translate-y-10" }
                 ${ isEven 
                     ? "bg-(--primary-gold) hover:bg-(--secondary-gold) hover:-translate-y-1.25"
