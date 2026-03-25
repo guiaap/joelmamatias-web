@@ -175,7 +175,7 @@ export function Separator({width, color}) {
 
 export function SocialMediaLink() {
 
-    const { ref, isVisible } = useInView();
+    
 
     return (
 
@@ -183,15 +183,11 @@ export function SocialMediaLink() {
             href="https://www.instagram.com/jm.gestaointeligente/" 
             target="_blank"
             rel="noopener noreferrer"
-            ref={ref}
-            className={`
+            className="
                 flex items-center gap-4 
                 mb-8 w-fit
                 transition-all duration-700
-
-                ${ isVisible ? "translate-x-0 opacity-100" : "-translate-x-10"}
-            
-            `}>
+            ">
             <img 
                 src={instagram} 
                 alt="Logo do Instagram" 
@@ -222,16 +218,13 @@ export function OtherContactsItem({iconName, text}) {
 
 export function WhatsAppButton() {
 
-    const { ref, isVisible } = useInView();
-
     return (
 
         <a 
             href="https://wa.me/47991181188" 
             target="_blank"
             rel="noopener noreferrer"
-            ref={ref}
-            className={`
+            className="
                 block w-fit
                 uppercase tracking-widest
                 text-[0.8rem] text-(--green)
@@ -241,10 +234,7 @@ export function WhatsAppButton() {
               
                 hover:bg-(--transparent-green-strong)
                 hover:border-(--green)
-
-                ${ isVisible ? "translate-x-0 opacity-100" : "-translate-x-10"}
-
-        `}>
+        ">
             Entrar em contato via WhatsApp
         </a>
         
@@ -280,63 +270,45 @@ export default function ContactSection() {
                         color1="--white" color2="--primary-gold"
                      />
 
-                     <p 
+                    <div 
                         ref={ref}
-                        className={`
-                            text-[1rem]
+                        className={` 
                             transition-all duration-700
-
-                            ${ isVisible ? "translate-x-0 opacity-100" : "-translate-x-10"}
-                        `}>
-                        Pronta para ajudar sua empresa a organizar processos, garantir conformidade e alcançar resultados práticos.
-                        Preencha o formulário ou use um dos canais abaixo.
-                    </p>
-
-                   <Separator width="20px" color="--bg-transparent-smooth" />
-
-                    <h3 
-                        ref={ref}
-                        className={`
-                            uppercase text-[0.8rem] 
-                            tracking-widest mb-5
-                            transition-all duration-700
-
-                            ${ isVisible ? "translate-x-0 opacity-100" : "-translate-x-10"}
-                        `}>
-                        Siga-me
-                    </h3>
-
-                    <SocialMediaLink />
-
-
-                    <h3 
-                        ref={ref}
-                        className={`
-                            uppercase tracking-widest 
-                            text-[0.8rem] mb-5
-                            transition-all duration-700
-
-                            ${ isVisible ? "translate-x-0 opacity-100" : "-translate-x-10"}
-                    `}>
-
-                        Outras formas de contato
-                    </h3>
-
-                    <ul 
-                        ref={ref}
-                        className={`
-                            flex flex-col gap-2 mb-8
-                            transition-all duration-700
-
-                            ${ isVisible ? "translate-x-0 opacity-100" : "-translate-x-10"}
-                        `}>
-
-                        <OtherContactsItem iconName="mail" text="comercial@joelmamatias.com.br"  />
-                        <OtherContactsItem iconName="phone" text="(47) 99118-1188"  />
+                            ${ isVisible ? "translate-x-0 opacity-100" : "translate-x-10" }
                         
-                    </ul>
+                        `}>
 
-                    <WhatsAppButton />
+                        <p className=" text-[1rem]">
+                            Pronta para ajudar sua empresa a organizar processos, garantir conformidade e alcançar resultados práticos.
+                            Preencha o formulário ou use um dos canais abaixo.
+                        </p>
+                        
+                                           <Separator width="20px" color="--bg-transparent-smooth" />
+                        <h3 className="
+                                uppercase text-[0.8rem]
+                                tracking-widest mb-5
+                                transition-all duration-700
+                        ">
+                            Siga-me
+                        </h3>
+                        <SocialMediaLink />
+                        <h3 className="
+                                uppercase tracking-widest
+                                text-[0.8rem] mb-5
+                                transition-all duration-700
+                        ">
+                            Outras formas de contato
+                        </h3>
+                        <ul className="
+                                flex flex-col gap-2 mb-8
+                                transition-all duration-700
+                            ">
+                            <OtherContactsItem iconName="mail" text="comercial@joelmamatias.com.br"  />
+                            <OtherContactsItem iconName="phone" text="(47) 99118-1188"  />
+                        
+                        </ul>
+                        <WhatsAppButton />
+                    </div>
 
                 </div>
 

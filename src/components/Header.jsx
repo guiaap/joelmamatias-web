@@ -29,7 +29,7 @@ export function Logo() {
                     text-[0.7rem] text-(--primary-gold) 
                     uppercase tracking-widest
                 ">
-                    Soluções Documentais
+                    Gestão Inteligente
                 </span>
 
             </div>
