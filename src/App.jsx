@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import MainLayout from "./components/Layouts/MainLayout.jsx";
-import Home from "./pages/Home.jsx";
-import PostLayout from "./components/Layouts/PostLayout.jsx";
-import BlogPost from "./pages/BlogPost.jsx"
+import Layout from "./components/layout/Layout.jsx";
+import Home from "./pages/home/Home.jsx";
+import Post from "./pages/post/Post.jsx";
 
 export default function App() {
 
@@ -10,12 +9,11 @@ export default function App() {
    
     <Routes>
 
-      <Route element={<MainLayout />} >
-        <Route path="/" element={<Home />} />
-      </Route>
+      <Route element={<Layout />} >
 
-      <Route element={<PostLayout />}>
-        <Route path="/blogpost/:id" element={<BlogPost />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/post/:id" element={<Post />} />
+
       </Route>
 
     </Routes>

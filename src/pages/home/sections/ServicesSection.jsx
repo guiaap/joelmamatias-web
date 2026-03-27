@@ -1,7 +1,7 @@
-import SectionTag from "../SectionTag.jsx";
-import SectionTitle from "../SectionTitle.jsx";
-import { services } from "../../data/services.js";
-import { useInView } from "../../hooks/useInView.js";
+import SectionTag from "../../../components/ui/SectionTag.jsx";
+import SectionTitle from "../../../components/ui/SectionTitle.jsx";
+import { services } from "../../../data/services.js";
+import { useInView } from "../../../hooks/useInView.js";
 
 export function ServiceCard({number, image, alt, title, list}) {
 

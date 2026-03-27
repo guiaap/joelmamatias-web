@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { PostContext } from "../../contexts.js";
-import { Separator } from "../HomeSections/ContactSection.jsx";
-import { useInView } from "../../hooks/useInView.js";
+import { PostContext } from "../../../contexts/PostContext.js";
+import { Separator } from "../../home/sections/ContactSection.jsx";
+import { useInView } from "../../../hooks/useInView.js";
 
 export function PostPath() {
 
@@ -133,7 +133,7 @@ export default function PostHeroSection() {
             style={{ backgroundImage: `url(${post.image})` }}
             className="
                 flex items-center
-                py-10 px-5
+                py-30 px-5
                 min-h-100
                 bg-(--transparent-brown-strong)
                 bg-blend-darken

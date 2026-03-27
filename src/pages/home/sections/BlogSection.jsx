@@ -1,11 +1,11 @@
-import SectionTag from "../SectionTag.jsx";
-import SectionTitle from "../SectionTitle.jsx";
+import SectionTag from "../../../components/ui/SectionTag.jsx";
+import SectionTitle from "../../../components/ui/SectionTitle.jsx";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import Icon from "../Icon.jsx";
+import Icon from "../../../components/ui/Icon.jsx";
 import { useState } from "react";
-import { posts } from "../../data/posts.js";
-import { useInView } from "../../hooks/useInView.js";
+import { posts } from "../../../data/posts.js";
+import { useInView } from "../../../hooks/useInView.js";
 
 
 export function BlogCard({id, image, alt, date, title, description}) {
@@ -60,7 +60,7 @@ export function BlogCard({id, image, alt, date, title, description}) {
                 </p>
 
                 <Link 
-                    to={`/blogpost/${id}`}
+                    to={`/post/${id}`}
                     className="
                         absolute bottom-5
                         w-38.75 

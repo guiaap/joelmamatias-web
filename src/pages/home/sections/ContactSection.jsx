@@ -1,9 +1,9 @@
-import SectionTag from "../SectionTag.jsx";
-import SectionTitle from "../SectionTitle.jsx";
-import Icon from "../Icon.jsx";
-import { useInView } from "../../hooks/useInView.js";
+import SectionTag from "../../../components/ui/SectionTag.jsx";
+import SectionTitle from "../../../components/ui/SectionTitle.jsx";
+import Icon from "../../../components/ui/Icon.jsx";
+import { useInView } from "../../../hooks/useInView.js";
 
-import instagram from "../../assets/images/instagram.png";
+import instagram from "../../../assets/images/instagram.png";
 
 export function FormInput({
     as = "input",

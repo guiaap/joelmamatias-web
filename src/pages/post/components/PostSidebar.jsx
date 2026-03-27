@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { PostContext } from "../../contexts.js";
-import { useInView } from "../../hooks/useInView.js";
+import { PostContext } from "../../../contexts/PostContext.js";
+import { useInView } from "../../../hooks/useInView.js";
 
 export function AuthorCard() {
 

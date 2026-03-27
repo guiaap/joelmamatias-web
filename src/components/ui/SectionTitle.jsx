@@ -1,6 +1,10 @@
-import { useInView } from "../hooks/useInView.js";
+import { useInView } from "../../hooks/useInView.js";
 
-export default function SectionTitle({text1, text2, color1, color2}) {
+export default function SectionTitle({
+    text1, text2, 
+    color1 = "--primary-brown", 
+    color2 = "--primary-gold"
+}) {
 
     const { ref, isVisible } = useInView();
 
@@ -8,10 +12,10 @@ export default function SectionTitle({text1, text2, color1, color2}) {
 
         <h2 
             ref={ref}
+            style={{ color: `var(${color1})`}}
             className={`
                 font-cormorant 
                 text-[clamp(2.5rem,5vw,3.5rem)]
-                text-(${color1})
                 leading-tight
                 my-4
                 transition-all duration-700
@@ -20,7 +24,9 @@ export default function SectionTitle({text1, text2, color1, color2}) {
 
             {text1}
 
-            <span className={`text-(${color2}) italic`}>
+            <span 
+                style={{ color: `var(${color2})` }}
+                className="italic">
                 {text2}
             </span>
 

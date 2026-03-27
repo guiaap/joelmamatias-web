@@ -1,46 +1,13 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
-import Icon from "./Icon.jsx";
+import Logo from "../ui/Logo.jsx";
+import Icon from "../ui/Icon.jsx";
 import { useState, useEffect } from "react";
+import { MenuContext } from "../../contexts/MenuContext.js";
+import { useContext } from "react";
 
+export function MenuItem({to, text}) {
 
-export function Logo() {
-
-    return (
-
-        <Link 
-            to="/" 
-            aria-label="Ir para a página inicial"
-            className="flex gap-2 items-center">
-
-            <img 
-                src={logo} 
-                alt="Logo da Joelma Matias Soluções Documentias"
-                className="h-10 w-10"
-            />
-
-            <div className="flex flex-col leading-tight">
-
-                <span className="text-[1.4rem] font-cormorant font-bold">
-                    Joelma Matias
-                </span>
-
-                <span className="
-                    text-[0.7rem] text-(--primary-gold) 
-                    uppercase tracking-widest
-                ">
-                    Gestão Inteligente
-                </span>
-
-            </div>
-
-        </Link>
-
-    );
-}
-
-
-export function MenuItem({text, to, setIsOpen}) {
+    const { isOpen, setIsOpen } = useContext(MenuContext);
 
     return (
         
@@ -74,39 +41,44 @@ export function MenuItem({text, to, setIsOpen}) {
     );
 }
 
+export function Menu() {
 
-export function Menu({isOpen, setIsOpen}) {
+    const { isOpen, setIsOpen } = useContext(MenuContext);
 
     return (
 
         <ul className={`
-            absolute top-18.5 left-0 
-            w-full 
-            flex flex-col
+            absolute lg:static
+            top-18.5 left-0 
+            w-full lg:w-auto
+            flex flex-col lg:flex-row
+            lg:gap-3
+            bg-(--primary-brown) lg:bg-(--transparent)
+            transition-all duration-300
+
             ${ isOpen 
                 ? "max-h-75 pt-3 pb-5 px-5 opacity-100" 
                 : "max-h-0 overflow-hidden opacity-0"
             }
-            bg-(--primary-brown) lg:bg-(--transparent)
-            transition-all duration-300
-            lg:static
-            lg:flex-row lg:gap-3
-            lg:max-h-75 lg:w-auto
+            
+            lg:max-h-75 
             lg:opacity-100
         `}>
 
-            <MenuItem text="Início" to="/#start" setIsOpen={setIsOpen} />
-            <MenuItem text="Sobre Mim" to="/#about" setIsOpen={setIsOpen} />
-            <MenuItem text="Serviços" to="/#services" setIsOpen={setIsOpen} />
-            <MenuItem text="Produtos" to="/#products" setIsOpen={setIsOpen} />
-            <MenuItem text="Blog" to="/#blog" setIsOpen={setIsOpen} />
-            <MenuItem text="Contato" to="/#contact" setIsOpen={setIsOpen} />
+            <MenuItem to="/#start" text="Início" />
+            <MenuItem to="/#about" text="Sobre Mim" />
+            <MenuItem to="/#services" text="Serviços" />
+            <MenuItem to="/#products" text="Produtos" />
+            <MenuItem to="/#blog" text="Blog" />
+            <MenuItem to="/#contact" text="Contato" />
 
         </ul>
     );
 }
 
-export function MenuButton({isOpen, setIsOpen}) {
+export function MenuButton() {
+
+    const { isOpen, setIsOpen } = useContext(MenuContext);
     
     return (
 
@@ -114,17 +86,18 @@ export function MenuButton({isOpen, setIsOpen}) {
             onClick={() => setIsOpen(!isOpen)}
             aria-label={`${isOpen ? "fechar" : "abrir"} menu de navegação`}
             className="lg:hidden"
-            >
+        >
             <Icon name={ isOpen ? "close" : "menu"} />
         </button>
     );
 }
 
-export function WhatsappButton() {
+export function HeaderWhatsappButton() {
 
     return (
 
-        <a href="https://wa.me/47991181188" 
+        <a 
+            href="https://wa.me/47991181188" 
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Ir para a conversa por WhatsApp"
@@ -134,9 +107,10 @@ export function WhatsappButton() {
                 px-4 py-2
                 border border-(--white) 
                 transition-colors duration-300
+                [&>svg]:transition-colors [&>svg]:duration-300
+
                 hover:border-(--primary-gold) 
                 hover:text-(--primary-gold)
-                [&>svg]:transition-colors [&>svg]:duration-300
                 hover:[&>svg]:fill-(--primary-gold)
         ">
 
@@ -151,7 +125,7 @@ export function WhatsappButton() {
 
 }
 
-export default function Header({isMainLayout}) {
+export default function Header() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -173,14 +147,12 @@ export default function Header({isMainLayout}) {
     return (
 
         <header className={`
-            ${ isMainLayout? "sticky xl:fixed" : "sticky"}
+            sticky xl:fixed 
             top-0 z-50
             w-full max-w-(--master-container) 
             bg-(--primary-brown)
             transition-colors duration-300
-            ${ isMainLayout 
-                ? `${isScrolled ? "lg:bg-(--transparent-primary-brown)" : "xl:bg-transparent"}` 
-                : "bg-(--primary-brown)"} 
+            ${isScrolled ? "lg:bg-(--transparent-primary-brown)" : "xl:bg-transparent"}
         `}>
         
             <nav className="
@@ -193,9 +165,13 @@ export default function Header({isMainLayout}) {
             ">
 
                 <Logo />
-                <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
-                <MenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
-                <WhatsappButton />
+
+                <MenuContext.Provider value={{ isOpen, setIsOpen }}>
+                    <Menu />
+                    <MenuButton />
+                </MenuContext.Provider>
+
+                <HeaderWhatsappButton />
                 
             </nav>
 

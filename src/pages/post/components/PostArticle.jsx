@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import { PostContext } from "../../contexts.js";
-import { Separator } from "../HomeSections/ContactSection.jsx";
-import { useInView } from "../../hooks/useInView.js";
+import { PostContext } from "../../../contexts/PostContext.js";
+import { useInView } from "../../../hooks/useInView.js";
 
 export function PostParagraph({text, isLead = false, isTip = false}) {
 
