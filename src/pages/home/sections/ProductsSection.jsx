@@ -1,4 +1,4 @@
-import SectionTag from "../../../components/ui/SectionTag.jsx";
+import Tag from "../../../components/ui/Tag.jsx";
 import SectionTitle from "../../../components/ui/SectionTitle.jsx";
 import { useState, useRef } from "react";
 import { useInView } from "../../../hooks/useInView.js";
@@ -50,7 +50,7 @@ export default function ProductsSection() {
                 ">
 
                     <div>
-                        <SectionTag
+                        <Tag
                             text="Loja"
                             color="--primary-brown"
                         />

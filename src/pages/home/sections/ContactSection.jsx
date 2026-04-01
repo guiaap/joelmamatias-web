@@ -1,4 +1,4 @@
-import SectionTag from "../../../components/ui/SectionTag.jsx";
+import Tag from "../../../components/ui/Tag.jsx";
 import SectionTitle from "../../../components/ui/SectionTitle.jsx";
 import Icon from "../../../components/ui/Icon.jsx";
 import { useInView } from "../../../hooks/useInView.js";
@@ -175,8 +175,6 @@ export function Separator({width, color}) {
 
 export function SocialMediaLink() {
 
-    
-
     return (
 
         <a  
@@ -263,7 +261,7 @@ export default function ContactSection() {
                     text-(--transparent-white-smooth)
                 ">
 
-                    <SectionTag text="Fale Comigo" />
+                    <Tag text="Fale Comigo" />
 
                     <SectionTitle
                         text1="Entre em " text2="contato"

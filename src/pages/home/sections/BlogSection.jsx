@@ -1,4 +1,4 @@
-import SectionTag from "../../../components/ui/SectionTag.jsx";
+import Tag from "../../../components/ui/Tag.jsx";
 import SectionTitle from "../../../components/ui/SectionTitle.jsx";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
@@ -151,7 +151,7 @@ export default function BlogSection() {
 
             <div className="max-w-(--container) mx-auto">
 
-                <SectionTag text="Conhecimento" />
+                <Tag text="Conhecimento" />
                 
                 <SectionTitle
                     text1="Últimas do " text2="Blog"

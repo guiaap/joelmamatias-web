@@ -1,7 +1,7 @@
-import SectionTag from "../../../components/ui/SectionTag.jsx";
+import Tag from "../../../components/ui/Tag.jsx";
 import SectionTitle from "../../../components/ui/SectionTitle.jsx";
 import Icon from "../../../components/ui/Icon.jsx";
-import { HookButton } from "../sections/HeroSection.jsx";
+import HookButton from "../../../components/ui/HookButton.jsx";
 import { useInView } from "../../../hooks/useInView.js";
 
 import photo from "../../../assets/images/joelma.jpeg";
@@ -151,7 +151,7 @@ export default function AboutSection() {
                         max-w-162.5  
                 ">
 
-                    <SectionTag text="Quem sou eu" color="--primary-brown" />
+                    <Tag text="Quem sou eu" color="--primary-brown" />
 
                     <SectionTitle 
                         text1="Sobre " text2="mim" 

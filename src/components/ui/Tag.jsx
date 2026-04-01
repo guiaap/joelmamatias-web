@@ -1,6 +1,6 @@
 import { useInView } from "../../hooks/useInView.js";
 
-export default function SectionTag({text, color = "--primary-gold"}) {
+export default function Tag({text, color = "--primary-gold"}) {
 
     const { ref, isVisible } = useInView();
 
@@ -9,6 +9,7 @@ export default function SectionTag({text, color = "--primary-gold"}) {
         <div 
             ref={ref} 
             className={`
+                mb-5
                 transition-all duration-700
                 ${ isVisible ? "translate-x-0 opacity-100" : "translate-x-40 opacity-0" }
             `}

@@ -17,7 +17,6 @@ export default function SectionTitle({
                 font-cormorant 
                 text-[clamp(2.5rem,5vw,3.5rem)]
                 leading-tight
-                my-4
                 transition-all duration-700
                 ${ isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}
         `}>

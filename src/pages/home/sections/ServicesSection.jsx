@@ -1,4 +1,4 @@
-import SectionTag from "../../../components/ui/SectionTag.jsx";
+import Tag from "../../../components/ui/Tag.jsx";
 import SectionTitle from "../../../components/ui/SectionTitle.jsx";
 import { services } from "../../../data/services.js";
 import { useInView } from "../../../hooks/useInView.js";
@@ -92,7 +92,7 @@ export default function ServicesSection() {
                     md:flex-row md:items-center
                 ">
                     <div>
-                        <SectionTag text="O que faço" />
+                        <Tag text="O que faço" />
                         <SectionTitle
                             text1="Áreas de " text2="atuação"
                             color1="--white" color2="--primary-gold"
