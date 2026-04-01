@@ -17,9 +17,11 @@ export default function Layout() {
           shadow-lg
         ">
           <Header />
+
           <main>
             <Outlet />
           </main>
+
           <Footer />
           <WhatsappButton />
       </div>

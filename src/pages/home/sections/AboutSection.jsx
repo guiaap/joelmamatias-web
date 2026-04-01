@@ -135,7 +135,7 @@ export default function AboutSection() {
             <div className="
                 flex flex-col lg:flex-row
                 items-center justify-between gap-8
-                max-w-(--container-large) mx-auto  
+                max-w-(--container) mx-auto  
             ">
 
                 <div className="relative order-2 lg:order-1">
