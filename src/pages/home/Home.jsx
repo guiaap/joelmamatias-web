@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import HeroSection from "./sections/HeroSection.jsx";
 import AboutSection from "./sections/AboutSection.jsx";
 import ServicesSection from "./sections/ServicesSection.jsx";
@@ -14,9 +14,8 @@ export default function Home() {
     useEffect(() => {
 
       if (location.hash) {
-
-        const el = document.querySelector(location.hash);
         
+        const el = document.querySelector(location.hash);
         if (el) { el.scrollIntoView({ behavior: "smooth" }); }
       }
 
@@ -25,14 +24,12 @@ export default function Home() {
     return (
 
         <div className="[&>section]:py-15 [&>section]:px-5">
-
           <HeroSection />
           <AboutSection />
           <ServicesSection />
           <ProductsSection />
           <BlogSection />
           <ContactSection />
-          
         </div>
           
     );

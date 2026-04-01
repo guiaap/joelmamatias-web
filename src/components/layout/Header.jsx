@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import Logo from "../ui/Logo.jsx";
 import Icon from "../ui/Icon.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { MenuContext } from "../../contexts/MenuContext.js";
-import { useContext } from "react";
+
 
 export function MenuItem({to, text}) {
 
-    const { isOpen, setIsOpen } = useContext(MenuContext);
+    const { setIsOpen } = useContext(MenuContext);
 
     return (
         
@@ -20,30 +20,32 @@ export function MenuItem({to, text}) {
                     relative
                     flex justify-center 
                     p-2 lg:p-1
-                    text-[0.9rem] 
+                    text-[0.9rem]
                     uppercase tracking-widest
-                    border-b border-b-(--transparent-white-strong)
-                    lg:border-none
+                    border-b lg:border-none
+                    border-b-(--transparent-white-strong)
                     transition-all duration-300
                     
-                    hover:text-(--primary-gold)
+                    hover:text-(--bright-gold)
+                    hover:text-shadow-(--bright-shadow)
 
                     after:content-[''] after:absolute
                     after:bottom-0 after:left-0
-                    after:h-px after:w-0
+                    after:h-[1.5px] after:w-0
                     after:bg-(--primary-gold)
                     after:transition-all after:duration-300
-                    hover:after:w-[70%]
+                    hover:after:w-full
                 ">
                 {text}
             </Link>
         </li>
+
     );
 }
 
 export function Menu() {
 
-    const { isOpen, setIsOpen } = useContext(MenuContext);
+    const { isOpen } = useContext(MenuContext);
 
     return (
 
@@ -53,26 +55,23 @@ export function Menu() {
             w-full lg:w-auto
             flex flex-col lg:flex-row
             lg:gap-3
-            bg-(--primary-brown) lg:bg-(--transparent)
-            transition-all duration-300
-
+            bg-(--primary-brown) lg:bg-transparent
+            transition-all duration-500
             ${ isOpen 
                 ? "max-h-75 pt-3 pb-5 px-5 opacity-100" 
                 : "max-h-0 overflow-hidden opacity-0"
             }
-            
             lg:max-h-75 
             lg:opacity-100
         `}>
-
             <MenuItem to="/#start" text="Início" />
             <MenuItem to="/#about" text="Sobre Mim" />
             <MenuItem to="/#services" text="Serviços" />
             <MenuItem to="/#products" text="Produtos" />
             <MenuItem to="/#blog" text="Blog" />
             <MenuItem to="/#contact" text="Contato" />
-
         </ul>
+
     );
 }
 
@@ -84,11 +83,12 @@ export function MenuButton() {
 
         <button 
             onClick={() => setIsOpen(!isOpen)}
-            aria-label={`${isOpen ? "fechar" : "abrir"} menu de navegação`}
+            aria-label={`${isOpen ? "Fechar" : "Abrir"} menu de navegação`}
             className="lg:hidden"
         >
             <Icon name={ isOpen ? "close" : "menu"} />
         </button>
+
     );
 }
 
@@ -104,14 +104,17 @@ export function HeaderWhatsappButton() {
             className="
                 hidden lg:flex 
                 gap-2 items-center
-                px-4 py-2
-                border border-(--white) 
-                transition-colors duration-300
-                [&>svg]:transition-colors [&>svg]:duration-300
+                px-3 py-2
+                border-[1.5px] border-(--white) 
+                transition-all duration-300
+                [&>svg]:transition-all [&>svg]:duration-300
 
-                hover:border-(--primary-gold) 
-                hover:text-(--primary-gold)
-                hover:[&>svg]:fill-(--primary-gold)
+                hover:border-(--bright-gold) 
+                hover:text-(--bright-gold)
+                hover:text-shadow-(--bright-shadow)
+                hover:shadow-(--bright-shadow)
+                hover:[&>svg]:fill-(--bright-gold)
+                hover:[&>svg]:drop-shadow-(--bright-shadow)
         ">
 
             <Icon name="whatsapp" size="20px" />  
@@ -119,7 +122,6 @@ export function HeaderWhatsappButton() {
             <span className="text-[0.9rem] uppercase tracking-widest">
                 Vamos Conversar
             </span>
-
         </a>
     );
 
@@ -147,12 +149,13 @@ export default function Header() {
     return (
 
         <header className={`
-            sticky xl:fixed 
+            sticky lg:fixed 
             top-0 z-50
             w-full max-w-(--master-container) 
             bg-(--primary-brown)
             transition-colors duration-300
-            ${isScrolled ? "lg:bg-(--transparent-primary-brown)" : "xl:bg-transparent"}
+            backdrop-blur-xs
+            ${isScrolled ? "lg:bg-(--transparent-primary-brown)" : "lg:bg-transparent"}
         `}>
         
             <nav className="
@@ -163,7 +166,6 @@ export default function Header() {
                 p-4 
                 text-(--white)
             ">
-
                 <Logo />
 
                 <MenuContext.Provider value={{ isOpen, setIsOpen }}>
@@ -172,9 +174,8 @@ export default function Header() {
                 </MenuContext.Provider>
 
                 <HeaderWhatsappButton />
-                
             </nav>
-
         </header>
+        
     );
 }
