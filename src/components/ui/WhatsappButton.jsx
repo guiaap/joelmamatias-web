@@ -1,4 +1,4 @@
-import whatsapp from "../../assets/images/whatsapp.png";
+import Icon from "./Icon.jsx";
 
 export default function WhatsappButton() {
 
@@ -10,10 +10,11 @@ export default function WhatsappButton() {
             target="_blank"
             rel="noopener noreferrer"
             className="
+                fixed
+                bottom-8 right-8 z-50
                 flex items-center justify-center
-                fixed 
-                bottom-10 right-10 z-50
-                h-12.5 w-12.5 md:h-15 md:w-15
+                
+                h-13 w-13 md:h-14 md:w-14
                 rounded-full 
                 overflow-hidden
                 bg-(--green)
@@ -23,12 +24,8 @@ export default function WhatsappButton() {
                 hover:-translate-y-1.25
                 hover:shadow-[0_0_10px_var(--green)]
             ">
-
-                <img
-                    src={whatsapp}
-                    alt="Logo do WhatsApp"
-                    className="object-cover h-[90%] w-[90%]
-                "/>
+                <Icon name="whatsapp" size="30px" /> 
          </a>
+
     );
 }
